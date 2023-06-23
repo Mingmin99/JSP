@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpSession;
  * Servlet implementation class ModifyOk
  */
 
-@WebServlet("/com/day0622/MemberEx/ModifyEx/ModifyOk")
+@WebServlet("/member/modify/ModifyOk")
 public class ModifyOk extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private String name, id, pw, phone1, phone2, phone3, gender;
@@ -79,8 +79,8 @@ public class ModifyOk extends HttpServlet {
             pstmt.setString(5, gender);
             pstmt.setString(6, id);
             int iResult = pstmt.executeUpdate();
-            
-            if( iResult == 1 ) {
+            System.out.println(iResult);
+            if( iResult  >= 1) {
                 System.out.println("수정 성공");
                 response.sendRedirect("modifyResult.jsp");
                 

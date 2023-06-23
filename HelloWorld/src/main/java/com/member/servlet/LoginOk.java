@@ -1,15 +1,17 @@
 package com.member.servlet;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LoginOk
@@ -17,7 +19,7 @@ import java.sql.Statement;
 @WebServlet("/member/login/LoginOk")
 public class LoginOk extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String name, loginid, loginpw, phone1, phone2, phone3, gender;
+	private String newId, newPw;
 	private String query;
 	private Connection conn;
 	private Statement stmt;
@@ -37,7 +39,7 @@ public class LoginOk extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("doGet");
-		checkLogin(request, response);
+		actionDo(request, response);
 	}
 
 	/**
@@ -47,37 +49,44 @@ public class LoginOk extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("doPost");
-		checkLogin(request, response);
+		actionDo(request, response);
 	}
 
-	private void checkLogin(HttpServletRequest request, HttpServletResponse response)
+	private void actionDo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		loginid = request.getParameter("id");
-		loginpw = request.getParameter("pw");
-
-		query = "select * from member ";
+		newId = request.getParameter("id");
+		newPw = request.getParameter("pw");
+		ResultSet resultSet = null;
+		query = "SELECT * FROM member";
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:dink20", "C##scott", "tiger");
 			stmt = conn.createStatement();
-			ResultSet rs = null;
+			resultSet = stmt.executeQuery(query);
 
-			while (rs.next()) {
+			while (resultSet.next()) {
+				String id = resultSet.getString("ID");
+				String pw = resultSet.getString("PW");
+				String name = resultSet.getString("NAME");
+				if (newId.equals(id) && newPw.equals(pw)) {
+					HttpSession session = request.getSession(true);
+					session.setAttribute("id", id);
+					session.setAttribute("name", name);
 
-				String id = rs.getString("id");
-				String pw = rs.getString("pw");
-				if (loginid.equals(id) && loginpw.equals("pw")) {
-					System.out.println("로그인 성공");
-					response.sendRedirect("joinResult.jsp");
+					System.out.println("login success");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("loginResult.jsp");
+					dispatcher.forward(request, response);
+					return;
 				} else {
-					System.out.println("로그인 실패");
-					response.sendRedirect("login.html");
+					System.out.println("login fail");
+					RequestDispatcher dispatcher = request.getRequestDispatcher("login.html");
+					dispatcher.forward(request, response);
+					return;
 				}
 			}
-
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -94,4 +103,5 @@ public class LoginOk extends HttpServlet {
 			}
 		}
 	}
+
 }

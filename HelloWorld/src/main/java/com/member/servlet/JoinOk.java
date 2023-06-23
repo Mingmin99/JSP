@@ -1,5 +1,4 @@
 package com.member.servlet;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,11 +14,12 @@ import java.sql.Statement;
  */
 @WebServlet("/member/join/JoinOk")
 public class JoinOk extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-    private String name, id, pw, phone1, phone2, phone3, gender;
-    private String query;
-    private Connection conn;
-    private Statement stmt;
+	private static final long serialVersionUID = 1L;
+	private String name, id, pw, phone1, phone2, phone3, gender;
+	private String query;
+	private Connection conn;
+	private Statement stmt;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -59,6 +59,7 @@ public class JoinOk extends HttpServlet {
 		phone2 = request.getParameter("phone2");
 		phone3 = request.getParameter("phone3");
 		gender = request.getParameter("gender");
+		
 		query = "insert into member(name, id, pw, phone1, phone2, phone3, gender) values('" + name + "','" + id + "','" + pw + "','" + phone1 + "','" + phone2 + "','" + phone3 + "','" + gender + "')";
 	
 		try {
@@ -67,12 +68,12 @@ public class JoinOk extends HttpServlet {
 			stmt = conn.createStatement();
 			int iResult = stmt.executeUpdate(query);
 			
-			
 			if( iResult == 1 ) {
-				System.out.println("등록 성공");
+				System.out.println("insert success");
 				response.sendRedirect("joinResult.jsp");
+				
 			} else {
-				System.out.println("등록 실패");
+				System.out.println("insert fail");
 				response.sendRedirect("join.html");
 			}
 			

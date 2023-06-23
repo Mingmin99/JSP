@@ -11,7 +11,7 @@
  <%= session.getAttribute("name") %>님 환영합니다.
  <br/>
  
-<a href="/HelloWorld/member/modify/modify.html">회원 정보수정</a><br/>
+<a href="/HelloWorld/member/modify/modify.jsp">회원 정보수정</a><br/>
 <a href="/HelloWorld/member/login/logout.jsp">로그아웃</a><br/>
 </body>
 </html>

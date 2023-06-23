@@ -53,28 +53,30 @@
     <servlet-name>LoginOk</servlet-name>
     <servlet-class>com.member.sevrvlet.LoginOk</servlet-class>
   </servlet>
-<!--   <servlet-mapping>
-    <servlet-name>LoginOk</servlet-name>
-    <url-pattern>/LoginOk</url-pattern>
-  </servlet-mapping> -->
   <servlet>
     <description></description>
     <display-name>ModifyOk</display-name>
     <servlet-name>ModifyOk</servlet-name>
     <servlet-class>com.member.sevrvlet.ModifyOk</servlet-class>
   </servlet>
-  <servlet-mapping>
+<!--   <servlet-mapping>
     <servlet-name>ModifyOk</servlet-name>
     <url-pattern>/ModifyOk</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   <servlet>
     <description></description>
     <display-name>JoinOk</display-name>
     <servlet-name>JoinOk</servlet-name>
     <servlet-class>com.member.servlet.JoinOk</servlet-class>
   </servlet>
-<!--   <servlet-mapping>
-    <servlet-name>JoinOk</servlet-name>
-    <url-pattern>/JoinOk</url-pattern>
-  </servlet-mapping> -->
+  <servlet>
+    <description></description>
+    <display-name>hello</display-name>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>com.member.servlet.hello</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
 </web-app>
