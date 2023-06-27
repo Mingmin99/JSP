@@ -63,6 +63,14 @@ h1 {
 .form-submit:hover {
 	background-color: #45a049;
 }
+
+.return-link {
+	display: block;
+	margin-top: 20px;
+	text-align: center;
+	color: #555555;
+}
+
 </style>
 </head>
 <body>
@@ -91,6 +99,7 @@ h1 {
 			</div>
 			<input class="form-submit" type="submit" value="회원가입">
 		</form>
+		<a class="return-link" href="/HelloWorld/day06/member/user/login/login.jsp">로그인 화면으로 돌아가기</a>
 	</div>
 </body>
 </html>

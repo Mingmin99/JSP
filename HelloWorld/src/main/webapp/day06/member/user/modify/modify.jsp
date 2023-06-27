@@ -56,12 +56,18 @@
 	form input[type="submit"]:hover {
 		background-color: #45a049;
 	}
+
+	.return-link {
+		display: block;
+		margin-top: 20px;
+		text-align: center;
+		color: #555555;
+	}
 </style>
 </head>
 <body>
 	<div class="container">
 		<h1>회원정보 수정</h1>
-	
 	
 		<form action="modifyOk.jsp" method="post">
 			<!-- <input type="hidden" name="name" id="name"> -->		
@@ -79,6 +85,8 @@
 			<br><br>
 			<input type="submit" value="전송">
 		</form>
+		
+		<a class="return-link" href="/HelloWorld/day06/member/user/mypage/mypage.jsp">마이페이지로 돌아가기</a>
 	</div>
 </body>
 </html>

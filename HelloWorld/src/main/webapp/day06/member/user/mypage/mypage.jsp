@@ -117,6 +117,7 @@
 			<a href="/HelloWorld/day06/member/user/modify/modify.jsp">나의 정보 수정</a>
 			<a href="/HelloWorld/day06/member/user/login/logout.jsp">로그아웃</a>
 			<a href="/HelloWorld/day06/member/user/login/withdrawal.jsp">회원 탈퇴</a>
+			<a href="/HelloWorld/day06/memberMain.jsp">메인화면으로 돌아가기</a>
 		</div>
 	</div>
 	<footer class="footer">

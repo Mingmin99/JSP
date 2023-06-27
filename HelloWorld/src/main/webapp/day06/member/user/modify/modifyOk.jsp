@@ -1,51 +1,61 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.Connection"%>
+<%@ page import="java.sql.DriverManager"%>
+<%@ page import="java.sql.SQLException"%>
+<%@ page import="java.sql.Statement"%>
+<%@ page import="java.sql.ResultSet"%>
 <%@page import="com.jsplec2.MemberDAO"%>
 <%@page import="com.jsplec2.MemberDTO"%>
+<%@ page import="java.util.regex.Pattern" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>회원정보 수정 성공</title>
 </head>
 <body>
-	<h1>회원정보 수정 성공</h1>
-	<%
-	/*     String id = (String) session.getAttribute("loginId"); */
-// modifyOk.jsp
+<%
+    String name = request.getParameter("name");
+    String pw = request.getParameter("pw");
+    String phone = request.getParameter("phone");
+    String email = request.getParameter("email");
 
-String name = request.getParameter("name");
-String pw = request.getParameter("pw");
-String phone = request.getParameter("phone");
-String email = request.getParameter("email");
+    MemberDTO dto = (MemberDTO) session.getAttribute("loginId");
+    if (dto != null) {
+        // Password validation using regular expression pattern
+        boolean isValidPassword =Pattern.matches("^(?=.*[a-zA-Z])(?=.*[0-9]).{4,}$", pw);
 
-MemberDTO dto = (MemberDTO) session.getAttribute("loginId");
-if (dto != null) {
-    dto.setName(name);
-    dto.setPw(pw);
-    dto.setPhone(phone);
-    dto.setEmail(email);
+        if (!isValidPassword) {
+%>
+            <script>
+                alert('비밀번호는 최소 4자리 이상이어야 하며, 영문과 숫자로 구성되어야 합니다.');
+                window.location.href = '/HelloWorld/day06/member/user/modify/modify.jsp';
+            </script>
+<%
+            return;
+        }
 
-    MemberDAO dao = new MemberDAO();
-    int iResult = dao.userUpdate(dto);
+        dto.setName(name);
+        dto.setPw(pw);
+        dto.setPhone(phone);
+        dto.setEmail(email);
 
-    if (iResult >= 1) {
-        out.println(dto.getName() + "님의 회원정보가 수정되었습니다.");
-        out.println("<script>alert('회원 정보 업데이트가 완료되었습니다'); window.location.href='/HelloWorld/day06/member/user/mypage/mypage.jsp';</script>");
+        MemberDAO dao = new MemberDAO();
+        int iResult = dao.userUpdate(dto);
 
-        /* response.sendRedirect("/HelloWorld/day06/member/user/mypage/mypage.jsp"); */
+        if (iResult >= 1) {
+            out.println(dto.getName() + "님의 회원정보가 수정되었습니다.");
+            out.println("<script>alert('회원 정보 업데이트가 완료되었습니다'); window.location.href='/HelloWorld/day06/member/user/mypage/mypage.jsp';</script>");
+        } else {
+            out.println(dto.getName() + "님의 회원정보가 수정에 실패하였습니다.");
+            out.println("<script>alert('회원 정보 업데이트에 실패했습니다.'); history.back();</script>");
+        }
     } else {
-        out.println(dto.getName() + "님의 회원정보가 수정에 실패하였습니다.");
-        out.println("<script>alert('회원 정보 업데이트에 실패했습니다.'); history.back();</script>");
-       /*  response.sendRedirect("/HelloWorld/day06/member/user/modify/modify.jsp"); */
+        // 세션에 "loginId" 속성이 존재하지 않는 경우 처리
+        out.println("로그인 정보를 찾을 수 없습니다.");
     }
-} else {
-    // 세션에 "loginId" 속성이 존재하지 않는 경우 처리
-    out.println("로그인 정보를 찾을 수 없습니다.");
-}
-
-	%>	
-	
+%>    
+    
 </body>
-
 </html>

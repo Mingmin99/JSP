@@ -290,7 +290,48 @@ public class MemberDAO {
 	    }
 	    return memberList;
 	}
-	
+	public ArrayList<MemberDTO> selectStop() {
+	    Connection conn = null;
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
+	    ArrayList<MemberDTO> memberList = new ArrayList<>();
+
+	    String query = "SELECT * FROM member2 WHERE status = '일시정지'";
+
+	    try {
+	        Class.forName(driver);
+	        conn = DriverManager.getConnection(url, uid, upw);
+	        pstmt = conn.prepareStatement(query);
+	        rs = pstmt.executeQuery();
+
+	        while (rs.next()) {
+	            String id = rs.getString("id");
+	            String name = rs.getString("name");
+	            String pw = rs.getString("pw");
+	            String email = rs.getString("email");
+	            String phone = rs.getString("phone");
+	            String status = rs.getString("status");
+	            String user_permission = rs.getString("user_permission");
+
+	            MemberDTO memberDto = new MemberDTO(name, id, pw, email, phone, status, user_permission);
+	            memberList.add(memberDto);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            if (rs != null)
+	                rs.close();
+	            if (pstmt != null)
+	                pstmt.close();
+	            if (conn != null)
+	                conn.close();
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return memberList;
+	}
 	public int updateStatusToNormal(String memberId) {
 	    Connection conn = null;
 	    PreparedStatement pstmt = null;
@@ -320,6 +361,9 @@ public class MemberDAO {
 	    }
 	    return iResult;
 	}
+	
+	
+	
 	public int updateStatusToStop(String memberId) {
 	    Connection conn = null;
 	    PreparedStatement pstmt = null;

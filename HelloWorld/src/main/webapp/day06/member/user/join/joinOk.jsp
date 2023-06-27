@@ -5,6 +5,7 @@
 <%@ page import="java.sql.ResultSet"%>
 <%@page import="com.jsplec2.MemberDAO"%>
 <%@page import="com.jsplec2.MemberDTO"%>
+<%@ page import="java.util.regex.Pattern" %> 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -75,18 +76,32 @@
 </head>
 <body>
 	<%
-		String name = request.getParameter("name");
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String email = request.getParameter("email");
-		String phone = request.getParameter("phone");
-		String status = "승인전";
-		String user_permission = "사용자";
-		
-		MemberDTO memberDTO = new MemberDTO(name, id, pw, email, phone, status, user_permission);
-		MemberDAO memberDAO = new MemberDAO();
-		int result = memberDAO.memberInsert(memberDTO);
-	%>
+    String name = request.getParameter("name");
+    String id = request.getParameter("id");
+    String pw = request.getParameter("pw");
+    String email = request.getParameter("email");
+    String phone = request.getParameter("phone");
+    String status = "승인전";
+    String user_permission = "사용자";
+
+    // Password validation using regular expression pattern
+    boolean isValidPassword = Pattern.matches("^(?=.*[a-zA-Z])(?=.*[0-9]).{4,}$", pw);
+
+    if (!isValidPassword) {
+        // Close the JSP scriptlet
+    %>
+        <script>
+            alert('비밀번호는 최소 4자리 이상이어야 하며, 영문과 숫자로 구성되어야 합니다.');
+            window.location.href = '/HelloWorld/day06/member/user/join/join.jsp';
+        </script>
+    <%
+        // Reopen the JSP scriptlet
+        return; // Stop further execution of the code
+    }
+    MemberDTO memberDTO = new MemberDTO(name, id, pw, email, phone, status, user_permission);
+    MemberDAO memberDAO = new MemberDAO();
+    int result = memberDAO.memberInsert(memberDTO);
+%>
 	<div class="container">
 		<h1>회원가입 결과</h1>
 		<div class="result-message <%= result > 0 ? "result-success" : "result-failure" %>">

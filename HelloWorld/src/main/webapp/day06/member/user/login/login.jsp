@@ -94,8 +94,12 @@
 				</div>
 				<input class="form-submit" type="submit" value="로그인">
 			</form>
+			<br/>
 			<div class="register-link">
 				<a href="/HelloWorld/day06/member/user/join/join.jsp">회원가입하기</a>
+				<br/>
+				<br/>
+				<a href="/HelloWorld/day06/memberMain.jsp">메인화면으로 돌아가기</a>
 			</div>
 		</div>
 	</div>

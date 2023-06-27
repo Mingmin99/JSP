@@ -49,14 +49,20 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>회원 승인</h1>
+	<div class="container">
+		<h1>회원 승인</h1>
 
-    <div class="links">
-        <a href="/HelloWorld/day06/member/manager/approve/signApprove.jsp">회원가입 승인 페이지</a>
-        <a href="/HelloWorld/day06/member/manager/approve/withdrawalApprove.jsp">회원탈퇴 승인 페이지</a>
-    </div>
-</div>
+		<div class="links">
+			<a href="/HelloWorld/day06/member/manager/approve/signApprove.jsp">회원가입
+				승인 페이지</a> <a
+				href="/HelloWorld/day06/member/manager/approve/withdrawalApprove.jsp">회원탈퇴
+				승인 페이지</a> </br>
+			</br>
+			</br> 
+	<a href="/HelloWorld/day06/member/manager/managerpage/managerpage.jsp">관리자페이지로 돌아가기</a>
+		</div>
+
+	</div>
 
 </body>
 </html>

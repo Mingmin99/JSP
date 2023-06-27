@@ -41,7 +41,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>메인 페이지</h1>
+		<h1>회원관리 프로그램</h1>
 		<a href="/HelloWorld/day06/member/user/login/login.jsp" class="menu-link">사용자 메뉴</a>
 		<a href="/HelloWorld/day06/member/manager/login/login.jsp" class="menu-link">관리자 메뉴</a>
 	</div>

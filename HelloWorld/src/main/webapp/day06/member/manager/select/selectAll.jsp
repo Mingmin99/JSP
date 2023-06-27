@@ -102,6 +102,9 @@
     </table>
     <div class="link-container">
         <a href="/HelloWorld/day06/member/manager/modify/modify.jsp" class="link">회원 수정</a>
+        <br/>
+		<br/>
+		<a href="/HelloWorld/day06/member/manager/managerpage/managerpage.jsp"> 관리자페이지로 돌아가기</a>
     </div>
 </div>
 

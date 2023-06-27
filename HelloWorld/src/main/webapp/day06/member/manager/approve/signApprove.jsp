@@ -78,13 +78,16 @@
                 ArrayList<MemberDTO> memberList = dao.selectBeforeApprove();
 
                 for (MemberDTO member : memberList) {
+                    String phone = member.getPhone();
+                    String formattedPhone = "010" + /* phone.substring(4, 8) */ "-xxxx" + "-xxxx"; // 전화번호 암호화
+                    %>
             %>
             <tr>
                 <td><%= member.getId() %></td>
                 <td><%= member.getName() %></td>
                 <td><%= member.getPw() %></td>
                 <td><%= member.getEmail() %></td>
-                <td><%= member.getPhone() %></td>
+                <td><%= formattedPhone %></td>
                 <td><%= member.getStatus() %></td>
                 <td><%= member.getUser_permission() %></td>
                 <td><a href="/HelloWorld/day06/member/manager/approve/signApproveOk.jsp?memberId=<%= member.getId() %>">승인</a></td>
