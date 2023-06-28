@@ -59,10 +59,6 @@
     <servlet-name>ModifyOk</servlet-name>
     <servlet-class>com.member.sevrvlet.ModifyOk</servlet-class>
   </servlet>
-<!--   <servlet-mapping>
-    <servlet-name>ModifyOk</servlet-name>
-    <url-pattern>/ModifyOk</url-pattern>
-  </servlet-mapping> -->
   <servlet>
     <description></description>
     <display-name>JoinOk</display-name>
@@ -78,5 +74,55 @@
   <servlet-mapping>
     <servlet-name>hello</servlet-name>
     <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FrontControlloerServlet</display-name>
+    <servlet-name>FrontControlloerServlet</servlet-name>
+    <servlet-class>com.frontControlloer.FrontControlloerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrontControlloerServlet</servlet-name>
+    <url-pattern>/FrontControlloerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberAllServlet</display-name>
+    <servlet-name>MemberAllServlet</servlet-name>
+    <servlet-class>com.command.MemberAllServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberAllServlet</servlet-name>
+    <url-pattern>/MemberAllServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HttpServletResponse</display-name>
+    <servlet-name>HttpServletResponse</servlet-name>
+    <servlet-class>com.dispatcher.HttpServletResponse</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HttpServletResponse</servlet-name>
+    <url-pattern>/HttpServletResponse</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestObj</display-name>
+    <servlet-name>RequestObj</servlet-name>
+    <servlet-class>com.dispatcher.RequestObj</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestObj</servlet-name>
+    <url-pattern>/RequestObj</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PostServlet</display-name>
+    <servlet-name>PostServlet</servlet-name>
+    <servlet-class>com.board.controller.PostServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PostServlet</servlet-name>
+    <url-pattern>/PostServlet</url-pattern>
   </servlet-mapping>
 </web-app>
