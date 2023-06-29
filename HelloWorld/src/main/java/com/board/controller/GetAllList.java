@@ -23,4 +23,28 @@ public class GetAllList implements PostService {
 
 	}
 
+	@Override
+	public PostDTO selectpostbyid(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int updatepost(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deletepost(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void replypost(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

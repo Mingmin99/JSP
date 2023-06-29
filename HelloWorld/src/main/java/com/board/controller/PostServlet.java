@@ -79,19 +79,62 @@ public class PostServlet extends HttpServlet {
 
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/day07/board/view/getAllList.jsp");
 			dispatcher.forward(request, response);
-		} 
-		
+		}
+
 		// insert 게시글 등록
-		else if (command.equals("/day07/board/view/InsertPost.do")) {
+		else if (command.equals("/day07/board/view/Insert.do")) {
 			// GetAllList 인스턴스 생성
-			//서비스 뭘로 할거야 정하는 것 
+			// 서비스 뭘로 할거야 정하는 것
 			PostService insertPost = new InsertPost();
-			
-			//insertPost 서비스의 insertpost 메서드 호출하여 글 등록하기
+
+			// insertPost 서비스의 insertpost 메서드 호출하여 글 등록하기
 			insertPost.insertpost(request, response);
-			 response.sendRedirect("GetAllList.do");
+			response.sendRedirect("GetAllList.do");
 
+		} else if (command.equals("/day07/board/view/detail.do")) {
+			System.out.println("상세보기 메소드 실행");
+			PostService detailpost = new DetailPost();
+			PostDTO post = detailpost.selectpostbyid(request, response);
 
-		}}
+			// JSP 파일로 전달할 데이터 설정
+			request.setAttribute("post", post);
+
+			System.out.println(post.getWriter());
+
+			// 포워딩
+			RequestDispatcher reqDpt = request.getRequestDispatcher("/day07/board/view/detailPost1.jsp");
+			reqDpt.forward(request, response);
+//	            response.sendRedirect("detailPost.jsp");
+
+		} else if (command.equals("/day07/board/view/update.do")) {
+			System.out.println("수정메소드 실행");
+
+			PostService update = new UpdatePost();
+			update.updatepost(request, response);
+			response.sendRedirect("GetAllList.do");
+
+		} else if (command.equals("/day07/board/view/delete.do")) {
+			System.out.println("삭제 메소드 실행");
+
+			PostService delete = new DeletePost();
+			delete.deletepost(request, response);
+			response.sendRedirect("GetAllList.do");
+
+		}
+
+		else if (command.equals("/day07/board/view/reply.do")) {
+			System.out.println("답글 등록 메소드 실행");
+
+			PostService reply = new ReplyPost();
+			reply.replypost(request, response);
+			response.sendRedirect("GetAllList.do");
+
+		}
+
+		else {
+			System.out.println("연결 실패");
+		}
+
+	}
 
 }

@@ -8,7 +8,7 @@ import com.board.model.PostDTO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class InsertPost implements PostService {
+public class DetailPost implements PostService {
 
 	@Override
 	public ArrayList<PostDTO> getalllist(HttpServletRequest request, HttpServletResponse response) {
@@ -18,20 +18,15 @@ public class InsertPost implements PostService {
 
 	@Override
 	public void insertpost(HttpServletRequest request, HttpServletResponse response) {
-		PostDAO dao = new PostDAO();
+		// TODO Auto-generated method stub
 
-		PostDTO dto = new PostDTO(request.getParameter("writer"), request.getParameter("title"),
-				request.getParameter("content"),dao.setCategory());
-
-		// PostDTO 객체를 DAO를 이용하여 데이터베이스에 등록
-		dao.InsertPost(dto);
 	}
 
 	@Override
 	public PostDTO selectpostbyid(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		 PostDAO dao = new PostDAO();
+	        return dao.selectPostbyId(Integer.parseInt(request.getParameter("id")));
+	    }
 
 	@Override
 	public int updatepost(HttpServletRequest request, HttpServletResponse response) {
@@ -50,5 +45,6 @@ public class InsertPost implements PostService {
 		// TODO Auto-generated method stub
 		
 	}
+	}
 
-}
+

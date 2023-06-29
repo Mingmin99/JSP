@@ -8,7 +8,11 @@ public class PostDTO {
 	private String writer;
 	private String title;
 	private String content;
-	private Timestamp writeDate;
+	private Timestamp write_Date;
+	private int views;
+	private int category;
+	private int levelNum;
+	private int blank;
 
 	public PostDTO(String writer, String title, String content) {
 		super();
@@ -17,10 +21,6 @@ public class PostDTO {
 		this.content = content;
 	}
 
-	private int views;
-	private int category;
-	private int levelNum;
-
 	public PostDTO(int id, String writer, String title, String content, Timestamp writeDate, int views, int category,
 			int levelNum, int blank) {
 		super();
@@ -28,14 +28,20 @@ public class PostDTO {
 		this.writer = writer;
 		this.title = title;
 		this.content = content;
-		this.writeDate = writeDate;
+		this.write_Date = writeDate;
 		this.views = views;
 		this.category = category;
 		this.levelNum = levelNum;
 		this.blank = blank;
 	}
 
-	private int blank;
+	public PostDTO(String writer, String title, String content, int category) {
+		super();
+		this.writer = writer;
+		this.title = title;
+		this.content = content;
+		this.category = category;
+	}
 
 	// Getters and Setters
 	public int getId() {
@@ -71,11 +77,11 @@ public class PostDTO {
 	}
 
 	public Timestamp getWriteDate() {
-		return writeDate;
+		return write_Date;
 	}
 
 	public void setWriteDate(Timestamp writeDate) {
-		this.writeDate = writeDate;
+		this.write_Date = writeDate;
 	}
 
 	public int getViews() {

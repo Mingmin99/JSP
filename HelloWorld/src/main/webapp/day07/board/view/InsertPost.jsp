@@ -80,7 +80,7 @@
     <div class="container">
         <h1>게시글 작성</h1>
 
-        <form action="InsertPost.do" method="post">
+        <form action="Insert.do" method="post">
            
             <div class="form-group">
                 <label for="writer">작성자</label>
