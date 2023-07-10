@@ -76,74 +76,55 @@ body {
 }
 
 .title {
-	left: 180px;
-	top: 180px;
 	position: absolute;
 	text-align: center;
 	color: black;
 	font-size: 30px;
 	font-family: Noto Sans KR;
-}
-
-.select_account {
-	left: 300px;
-	top: 180px;
-	position: absolute;
-}
-
-.btn-group {
-	display: flex;
-	gap: 10px;
-}
-
-.btn-group .btn {
-	font-size: 15px;
-	font-family: Inter, sans-serif;
-	font-weight: 500;
-	line-height: 1.5;
-	padding: 10px 10px;
-	border-radius: 30px;
-	background-color: #f7f7f7;
-	color: #080C0C;
-	transition: background-color 0.3s, color 0.3s;
-	border: 2px solid #f7f7f7;
-}
-
-.btn-group .btn:hover, .btn-group .btn:focus {
-	background-color: #419390;
-	color: #ffffff;
-	border-color: #419390;
+	left: 400px;
+	top: 200px;
+	margin-bottom: 20px;
+	transform: translate(-50%, -50%);
 }
 
 .container {
-	width: 50%;
-	margin: 40px auto;
-	margin-top: 180px;
-	padding: 20px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	border-radius: 5px;
-	padding: 20px;
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin-top: 120px;
 }
 
-h1 {
+.form-container {
+	background-color: #f8f8f8;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	padding: 40px;
+	border-radius: 10px;
+	max-width: 800px;
+	width: 100%;
+}
+
+.form-container h2 {
 	text-align: center;
-	margin-top: 0;
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333333;
 }
 
 .form-group {
 	margin-bottom: 20px;
-	font-size: 20px;
 }
 
 .form-group label {
+	display: block;
 	font-weight: bold;
 	margin-bottom: 8px;
-	color: #333333;
+	color: #666666;
 }
 
-.form-group select, .form-group input[type="text"], .form-group input[type="password"]
-	{
+.form-group input[type="text"], .form-group input[type="password"],
+	.form-group input[type="checkbox"] {
 	width: 100%;
 	padding: 12px;
 	border: 1px solid #cccccc;
@@ -152,28 +133,22 @@ h1 {
 	font-size: 16px;
 }
 
-.form-group select:focus, .form-group input[type="text"]:focus,
-	.form-group input[type="password"]:focus {
+.form-group input[type="text"]:focus, .form-group input[type="password"]:focus,
+	.form-group input[type="checkbox"]:focus {
 	outline: none;
 	border-color: #009490;
 }
 
-.balance-container {
-	display: flex; /* Flexbox를 사용하여 요소들을 나란히 배치 */
-	align-items: center; /* 요소들을 수직 가운데로 정렬 */
+.checkbox-group label {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	color: #666666;
+	cursor: pointer;
 }
 
-.balance-label {
-	font-weight: bold;
-	margin-right: 8px; /* 우측 여백 추가 */
-	color: #333333;
-}
-
-#balance {
-	padding: 4px 8px;
-	background-color: #f9f9f9;
-	border: 1px solid #cccccc;
-	border-radius: 5px;
+.checkbox-group input[type="checkbox"] {
+	margin-right: 5px;
 }
 
 .button-container {
@@ -341,61 +316,52 @@ h1 {
 
 
 	<div class="section1">
-		<div class="title">계좌이체</div>
-		<div class="select_account">
-			<div class="btn-group" role="group" aria-label="Select Bank">
 
-				<button type="button" class="btn btn-secondary"
-					onclick="location.href='accountTransferInner.jsp'">하나은행
-					계좌이체</button>
-				<button type="button" class="btn btn-secondary"
-					onclick="location.href='accountTransferInner.jsp'">다른은행
-					계좌이체</button>
+		<div class="title">새로운 계좌를 개설해드리겠습니다.</div>
+
+		<div class="container">
+
+			<div class="form-container">
+				<form>
+					<h2>계좌개설</h2>
+					<div class="form-group">
+						<label for="product-name">상품명</label> <input type="text"
+							id="product-name" name="product-name" required>
+					</div>
+					<div class="form-group">
+						<label for="bank">은행</label> <input type="text" id="bank"
+							name="bank" required>
+					</div>
+					<div class="form-group">
+						<label for="account-nickname">계좌 별명</label> <input type="text"
+							id="account-nickname" name="account-nickname" required>
+					</div>
+					<div class="form-group">
+						<label for="account-password">계좌 비밀번호</label> <input
+							type="password" id="account-password" name="account-password"
+							required>
+					</div>
+					<div class="form-group">
+						<label for="confirm-password">비밀번호 확인</label> <input
+							type="password" id="confirm-password" name="confirm-password"
+							required>
+					</div>
+					<div class="checkbox-group">
+						<label> <input type="checkbox" name="terms" required>
+							약관 동의
+						</label>
+					</div>
+					<div class="button-container">
+						<button type="submit">계좌 개설</button>
+					</div>
+				</form>
 			</div>
 		</div>
 
-		<div class="container">
-			<!-- 	<h1>계좌이체를 진행하겠습니다.</h1> -->
-			<form>
-				<div class="form-group">
-					<label for="bank-select">은행 선택</label> <select class="form-control"
-						id="bank-select">
-						<option value="bank1">은행1</option>
-						<option value="bank2">은행2</option>
-						<option value="bank3">은행3</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="account-select">계좌번호 선택</label> <select
-						class="form-control" id="account-select">
-						<option value="account1">계좌1</option>
-						<option value="account2">계좌2</option>
-						<option value="account3">계좌3</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label class="balance-label" id="balance-label">잔액:</label> <span
-						id="balance">100,000원</span>
-				</div>
-				<div class="form-group">
-					<label for="transfer-input">송금액</label> <input type="text"
-						class="form-control" id="transfer-input">
-				</div>
-				<div class="form-group">
-					<label for="password-input">계좌 비밀번호</label> <input type="password"
-						class="form-control" id="password-input">
-				</div>
-				<div class="form-group">
-					<label for="recipient-input">상대계좌</label> <input type="text"
-						class="form-control" id="recipient-input">
-				</div>
-				<div class="button-container">
-					<button type="submit">계좌 이체</button>
-				</div>
-			</form>
-		</div>
-
 	</div>
+
+
+
 
 
 
