@@ -88,7 +88,7 @@ body {
 .DivQuickButtonWrap {
 	position: absolute;
 	right: 0;
-	width: 332px;
+	width: 482px; /* 수정: 버튼 두 개와 추가 버튼의 너비 합계 */
 	height: 124px;
 	margin-right: 200px;
 	top: 220px;
@@ -99,18 +99,26 @@ body {
 	height: 100px;
 	position: absolute;
 	border-radius: 10px;
+	border: 1px solid #CCCCCC; 
 }
 
 .Link:first-child {
-	left: 0;
-	background: linear-gradient(180deg, rgba(0, 151, 147, 0.94) 0%, #009591
-		100%);
+	left: 180px;
+	background: #009591;
 }
 
+.Link:nth-child(2) {
+	left: 360px;
+	background: #323850;
+}
+
+/* 수정: 추가 버튼 스타일 */
 .Link:last-child {
-	left: 180px;
-	background: linear-gradient(180deg, rgba(52, 59, 84, 0.94) 0%, #323850
-		100%);
+	width: 220px;
+	height: 60px;
+	top: 130px;
+	left: -550px;
+	background: none;
 }
 
 .LinkText {
@@ -125,6 +133,22 @@ body {
 	font-weight: 700;
 	line-height: 18px;
 	word-wrap: break-word;
+}
+
+.LinkText1 {
+	width: auto;
+	left: 50%;
+	top: 30%;
+	transform: translateX(-50%);
+	position: absolute;
+	color: #595959;
+	font-size: 20px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+	line-height: 29px;
+	white-space: nowrap;
+	text-align: center;
+	line-height: 29px;
 }
 
 .section2 {
@@ -467,6 +491,8 @@ body {
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="innerAccount.jsp">계좌조회</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="accountTransferInner.jsp">계좌이체</a></li>
 						<li class="nav-item"><a class="nav-link"
@@ -499,13 +525,21 @@ body {
 		</div>
 
 		<div class="DivQuickButtonWrap">
-			<div class="Link">
+			<button class="Link"
+				onclick="location.href='innerAccount.jsp'">
 				<div class="LinkText">조회</div>
-			</div>
-			<div class="Link">
+			</button>
+			<button class="Link"
+				onclick="location.href='accountTransferInner.jsp'">
 				<div class="LinkText">이체</div>
-			</div>
+			</button>
+			<button class="Link"
+				onclick="location.href='selectRegisterAccount.jsp'">
+				<div class="LinkText1">오픈뱅킹 시작하기</div>
+			</button>
 		</div>
+
+
 
 	</div>
 
@@ -515,23 +549,23 @@ body {
 			<div class="link-container">
 				<div class="link-item1">
 					<c:url var="logoUrl_bankbook" value="/bankbook.svg" />
-					<a class="logoUrl_bankbook" href="#"> <img
+					<a class="logoUrl_bankbook" href="makeAccountSelect.jsp"> <img
 						src="${logoUrl_bankbook}" alt="아이콘" class="logoUrl_bankbook">
 					</a>
 					<div class="link-text">손 쉬운 계좌개설</div>
-
 				</div>
+
 				<div class="link-item2">
 					<c:url var="logoUrl_send" value="/send.svg" />
-					<a class="logoUrl_send" href="#"> <img src="${logoUrl_send}"
-						alt="아이콘" class="logoUrl_send">
+					<a class="logoUrl_send" href="accountTransferInner.jsp"> <img
+						src="${logoUrl_send}" alt="아이콘" class="logoUrl_send">
 					</a>
 					<div class="link-text">간편한 이체</div>
 
 				</div>
 				<div class="link-item3">
 					<c:url var="logoUrl_glasses" value="/glasses.svg" />
-					<a class="logoUrl_glasses" href="#"> <img
+					<a class="logoUrl_glasses" href="innerAccount.jsp"> <img
 						src="${logoUrl_glasses}" alt="아이콘" class="logoUrl_glasses">
 					</a>
 					<div class="link-text">내가 보유한 계좌를 한눈에!</div>

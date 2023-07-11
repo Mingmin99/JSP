@@ -387,6 +387,8 @@ body {
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="innerAccount.jsp">계좌조회</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="accountTransferInner.jsp">계좌이체</a></li>
 						<li class="nav-item"><a class="nav-link"
@@ -426,7 +428,7 @@ body {
 				<div class="category">예금・적금</div>
 			</div> -->
 		</div>
-c: each { 
+
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="headingOne">
@@ -444,15 +446,17 @@ c: each {
 								<div class="account-info">
 									<span class="account-bank">은행명: 우리은행</span> <span
 										class="account-number">계좌번호: 1234567890</span> <span
-										class="account-name">계좌명: 홍길동</span>
+										class="account-name">계좌명: 부자가 되고 말테야</span>
 								</div>
 							</div>
 							<div class="right-column">
 								<span class="balance">잔액: 1,000,000원</span>
 							</div>
 							<div class="buttons">
-								<button class="transfer-button">이체</button>
-								<button class="transaction-button">거래내역</button>
+								<button class="transfer-button"
+									onclick="location.href='accountTransferInner.jsp'">이체</button>
+								<button class="transaction-button"
+									onclick="location.href='oneTransferInfo.jsp'">거래내역</button>
 							</div>
 						</div>
 
@@ -485,8 +489,10 @@ c: each {
 								<span class="balance">잔액: 1,000,000원</span>
 							</div>
 							<div class="buttons">
-								<button class="transfer-button">이체</button>
-								<button class="transaction-button">거래내역</button>
+								<button class="transfer-button"
+									onclick="location.href='accountTransferInner.jsp'">이체</button>
+								<button class="transaction-button"
+									onclick="location.href='transferInfo.jsp'">거래내역</button>
 							</div>
 						</div>
 					</div>

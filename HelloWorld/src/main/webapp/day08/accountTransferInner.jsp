@@ -72,12 +72,18 @@ body {
 /* 제목  */
 .section1 {
 	background-color: #FFFFFF;
-	height: 800px;
+	height: 1100px;
+}
+
+.account-transfer-info {
+	width: 100%;
+	height: 150px;
+	position: relative;
 }
 
 .title {
 	left: 180px;
-	top: 180px;
+	top: 45px;
 	position: absolute;
 	text-align: center;
 	color: black;
@@ -85,9 +91,18 @@ body {
 	font-family: Noto Sans KR;
 }
 
+.container {
+	padding: 30px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	margin-bottom: 30px;
+	padding: 30px;
+}
+
 .select_account {
-	left: 300px;
-	top: 180px;
+	left: 420px;
+	top: 45px;
 	position: absolute;
 }
 
@@ -113,17 +128,6 @@ body {
 	background-color: #419390;
 	color: #ffffff;
 	border-color: #419390;
-}
-
-.container {
-	width: 50%;
-	margin: 40px auto;
-	margin-top: 180px;
-	padding: 20px;
-	background-color: #ffffff;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	border-radius: 5px;
-	padding: 20px;
 }
 
 h1 {
@@ -178,6 +182,7 @@ h1 {
 
 .button-container {
 	text-align: center;
+	margin-bottom: 50px;
 }
 
 .button-container button {
@@ -297,7 +302,6 @@ h1 {
 	left: 105px;
 }
 </style>
-
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 </head>
@@ -317,6 +321,8 @@ h1 {
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="innerAccount.jsp">계좌조회</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="accountTransferInner.jsp">계좌이체</a></li>
 						<li class="nav-item"><a class="nav-link"
@@ -341,18 +347,23 @@ h1 {
 
 
 	<div class="section1">
-		<div class="title">계좌이체</div>
-		<div class="select_account">
-			<div class="btn-group" role="group" aria-label="Select Bank">
 
-				<button type="button" class="btn btn-secondary"
-					onclick="location.href='accountTransferInner.jsp'">하나은행
-					계좌이체</button>
-				<button type="button" class="btn btn-secondary"
-					onclick="location.href='accountTransferInner.jsp'">다른은행
-					계좌이체</button>
+		<div class="account-transfer-info">
+
+			<div class="title">하나은행 계좌이체</div>
+			<div class="select_account">
+				<div class="btn-group" role="group" aria-label="Select Bank">
+
+					<button type="button" class="btn btn-secondary"
+						onclick="location.href='accountTransferInner.jsp'">하나은행
+						계좌이체</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="location.href='accountTransferOuter.jsp'">다른은행
+						계좌이체</button>
+				</div>
 			</div>
 		</div>
+
 
 		<div class="container">
 			<!-- 	<h1>계좌이체를 진행하겠습니다.</h1> -->
@@ -386,20 +397,25 @@ h1 {
 						class="form-control" id="password-input">
 				</div>
 				<div class="form-group">
-					<label for="recipient-input">상대계좌</label> <input type="text"
-						class="form-control" id="recipient-input">
+					<label for="recipient-bank-select">상대은행 선택</label> <select
+						class="form-control" id="recipient-bank-select">
+						<option value="bank1">은행1</option>
+						<option value="bank2">은행2</option>
+						<option value="bank3">은행3</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="recipient-account-input">상대계좌</label> <input
+						type="text" class="form-control" id="recipient-account-input">
 				</div>
 				<div class="button-container">
 					<button type="submit">계좌 이체</button>
 				</div>
 			</form>
+
 		</div>
 
 	</div>
-
-
-
-
 
 
 	<footer class="BankFooter">
@@ -427,4 +443,3 @@ h1 {
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-

@@ -432,6 +432,8 @@ body {
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="innerAccount.jsp">계좌조회</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="accountTransferInner.jsp">계좌이체</a></li>
 						<li class="nav-item"><a class="nav-link"
@@ -505,8 +507,10 @@ body {
 								<span class="balance">잔액: 1,000,000원</span>
 							</div>
 							<div class="buttons">
-								<button class="transfer-button">이체</button>
-								<button class="transaction-button">거래내역</button>
+								<button class="transfer-button"
+									onclick="location.href='accountTransferInner.jsp'">이체</button>
+								<button class="transaction-button"
+									onclick="location.href='transferInfo.jsp'">거래내역</button>
 							</div>
 						</div>
 
@@ -539,8 +543,10 @@ body {
 								<span class="balance">잔액: 1,000,000원</span>
 							</div>
 							<div class="buttons">
-								<button class="transfer-button">이체</button>
-								<button class="transaction-button">거래내역</button>
+								<button class="transfer-button"
+									onclick="location.href='accountTransferInner.jsp'">이체</button>
+								<button class="transaction-button"
+									onclick="location.href='transferInfo.jsp'">거래내역</button>
 							</div>
 						</div>
 					</div>

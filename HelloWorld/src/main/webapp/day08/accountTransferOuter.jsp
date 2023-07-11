@@ -2,20 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>웹 페이지</title>
+<title>Insert title here</title>
 <style>
 /* CSS 스타일 지정 */
-@font-face {
-	font-family: 'Hana2-CM';
-	src: url('bootstrap/fonts/Hana2-CM.woff') format('woff');
-	/* 다른 서체 속성 설정 */
-}
-
 body {
 	margin: 0;
 	padding: 0;
@@ -37,6 +29,7 @@ body {
 	text-align: center;
 }
 
+/* 메뉴바 */
 .navbar-nav .nav-item {
 	margin-left: 50px;
 }
@@ -76,123 +69,139 @@ body {
 	width: 100%;
 }
 
+/* 제목  */
+/* 제목  */
 .section1 {
 	background-color: #FFFFFF;
-	height: 800px;
+	height: 1100px;
+}
+
+.account-transfer-info {
+	width: 100%;
+	height: 150px;
+	position: relative;
 }
 
 .title {
 	left: 180px;
-	top: 150px;
+	top: 45px;
 	position: absolute;
 	text-align: center;
 	color: black;
 	font-size: 30px;
-	font-family: 'Hana2-CM';
+	font-family: Noto Sans KR;
 }
 
-#product-table {
-	width: 90%;
-	margin: 0 auto;
-	margin-top: -50px;
-	text-align: center;
-	border-collapse: collapse;
+.container {
+	padding: 30px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	margin-bottom: 30px;
 }
 
-th, td {
-	padding: 20px;
-	text-align: center;
-	padding-right: 120px;
-	border-bottom: 1px solid #eee;
-	text-align: center;
-}
-
-th {
-	/* 	background-color: #f2f2f2; */
-	font-weight: 500;
-	position: relative;
-	font-size: 30px;
-	text-align: center;
-}
-
-th:after {
-	content: "";
+.select_account {
+	left: 420px;
+	top: 45px;
 	position: absolute;
-	bottom: -1px;
-	left: 0;
+}
+
+.btn-group {
+	display: flex;
+	gap: 10px;
+}
+
+.btn-group .btn {
+	font-size: 15px;
+	font-family: Inter, sans-serif;
+	font-weight: 500;
+	line-height: 1.5;
+	padding: 10px 10px;
+	border-radius: 30px;
+	background-color: #f7f7f7;
+	color: #080C0C;
+	transition: background-color 0.3s, color 0.3s;
+	border: 2px solid #f7f7f7;
+}
+
+.btn-group .btn:hover, .btn-group .btn:focus {
+	background-color: #419390;
+	color: #ffffff;
+	border-color: #419390;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 0;
+}
+
+.form-group {
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.form-group label {
+	font-weight: bold;
+	margin-bottom: 8px;
+	color: #333333;
+}
+
+.form-group select, .form-group input[type="text"], .form-group input[type="password"]
+	{
 	width: 100%;
-	height: 1px;
-	background-color: #ccc;
+	padding: 12px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	transition: border-color 0.3s ease;
+	font-size: 16px;
 }
 
-tr:hover {
+.form-group select:focus, .form-group input[type="text"]:focus,
+	.form-group input[type="password"]:focus {
+	outline: none;
+	border-color: #009490;
+}
+
+.balance-container {
+	display: flex; /* Flexbox를 사용하여 요소들을 나란히 배치 */
+	align-items: center; /* 요소들을 수직 가운데로 정렬 */
+}
+
+.balance-label {
+	font-weight: bold;
+	margin-right: 8px; /* 우측 여백 추가 */
+	color: #333333;
+}
+
+#balance {
+	padding: 4px 8px;
 	background-color: #f9f9f9;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
 }
 
-td:first-child {
-	font-weight: normal;
-	font-size: 20px;
-	color: #009591;
+.button-container {
+	text-align: center;
+	margin-bottom: 50px;
 }
 
-td:last-child {
-	font-weight: normal;
-	font-size: 20px;
-	color: #323850;
-}
-
-.product-buttons {
-	list-style-type: none;
-	padding: 0;
-	margin: 100px 0;
-	margin-left: 160px;
-}
-
-.product-buttons li {
-	display: inline-block;
-	margin-right: 10px;
-}
-
-.product-buttons button {
+.button-container button {
 	background-color: #009490;
-	color: #fff;
-	padding: 10px 20px;
+	color: #ffffff;
+	padding: 12px 24px;
 	border: none;
-	border-radius: 30px;
+	border-radius: 5px;
 	font-size: 16px;
 	font-weight: bold;
 	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+	transition: background-color 0.3s ease;
 }
 
-.product-buttons button:hover {
+.button-container button:hover {
 	background-color: #00756d;
-	transform: translateY(-2px);
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.show-all-button {
-	background-color: #009490;
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 30px;
-	font-size: 16px;
-	font-weight: bold;
-	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-.show-all-button:hover {
-	background-color: #00756d;
-	transform: translateY(-2px);
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.hide {
-	display: none;
-}
-
+/* 푸터 */
 .BankFooter {
 	background-color: #f7f7f7;
 	padding: 20px;
@@ -293,9 +302,6 @@ td:last-child {
 	left: 105px;
 }
 </style>
-
-
-<!-- 부트스트랩 연결 -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
 </head>
@@ -333,92 +339,84 @@ td:last-child {
 				</form>
 			</div>
 		</nav>
-
 	</div>
 	<hr class="navbar-divider">
 
+
+
+
+
 	<div class="section1">
 
+		<div class="account-transfer-info">
+
+			<div class="title">다른은행 계좌이체</div>
+			<div class="select_account">
+				<div class="btn-group" role="group" aria-label="Select Bank">
+
+					<button type="button" class="btn btn-secondary"
+						onclick="location.href='accountTransferInner.jsp'">하나은행
+						계좌이체</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="location.href='accountTransferOuter.jsp'">다른은행
+						계좌이체</button>
+				</div>
+			</div>
+		</div>
 
 
+		<div class="container">
+			<!-- 	<h1>계좌이체를 진행하겠습니다.</h1> -->
+			<form>
+				<div class="form-group">
+					<label for="bank-select">은행 선택</label> <select class="form-control"
+						id="bank-select">
+						<option value="bank1">은행1</option>
+						<option value="bank2">은행2</option>
+						<option value="bank3">은행3</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="account-select">계좌번호 선택</label> <select
+						class="form-control" id="account-select">
+						<option value="account1">계좌1</option>
+						<option value="account2">계좌2</option>
+						<option value="account3">계좌3</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="balance-label" id="balance-label">잔액:</label> <span
+						id="balance">100,000원</span>
+				</div>
+				<div class="form-group">
+					<label for="transfer-input">송금액</label> <input type="text"
+						class="form-control" id="transfer-input">
+				</div>
+				<div class="form-group">
+					<label for="password-input">계좌 비밀번호</label> <input type="password"
+						class="form-control" id="password-input">
+				</div>
+				<div class="form-group">
+					<label for="recipient-bank-select">상대은행 선택</label> <select
+						class="form-control" id="recipient-bank-select">
+						<option value="bank1">은행1</option>
+						<option value="bank2">은행2</option>
+						<option value="bank3">은행3</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="recipient-account-input">상대계좌</label> <input
+						type="text" class="form-control" id="recipient-account-input">
+				</div>
+				<div class="button-container">
+					<button type="submit">계좌 이체</button>
+				</div>
+			</form>
 
-		<script>
-			function showDetails(productType) {
-				var table = document.getElementById("product-table");
-				var rows = table.getElementsByTagName("tr");
-
-				for (var i = 1; i < rows.length; i++) {
-					var row = rows[i];
-					var productTypeCell = row.cells[0];
-					if (productTypeCell.innerText === productType) {
-						row.style.display = "table-row";
-					} else {
-						row.style.display = "none";
-					}
-				}
-			}
-
-			function showAll() {
-				var table = document.getElementById("product-table");
-				var rows = table.getElementsByTagName("tr");
-
-				for (var i = 1; i < rows.length; i++) {
-					rows[i].style.display = "table-row";
-				}
-			}
-		</script>
-
-		<div class="title">계좌개설 / 상품목록</div>
-
-		<ul class="product-buttons">
-			<li><button onclick="showDetails('입출금상품')">입출금 상품</button></li>
-			<li><button onclick="showDetails('예금적금상품')">예금적금 상품</button></li>
-			<li><button onclick="showDetails('보험상품')">보험 상품</button></li>
-			<li><button class="show-all-button" onclick="showAll()">전체
-					상품 보기</button></li>
-		</ul>
-
-		<table id="product-table">
-			<thead>
-				<tr>
-					<th>상품 종류</th>
-					<th>세부 상품</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>입출금상품</td>
-					<td><a href="makeAccount.jsp">입출금 상품 A</a></td>
-
-				</tr>
-				<tr>
-					<td>입출금상품</td>
-					<td><a href="makeAccount.jsp">입출금 상품 B</a></td>
-
-				</tr>
-				<tr>
-					<td>예금적금상품</td>
-					<td><a href="makeAccount.jsp">예금적금 상품 X</a></td>
-				</tr>
-				<tr>
-					<td>예금적금상품</td>
-					<td><a href="makeAccount.jsp">예금적금 상품 Y</a></td>
-				</tr>
-				<tr>
-					<td>보험상품</td>
-					<td><a href="makeAccount.jsp">보험 상품 I</a></td>
-				</tr>
-				<tr>
-					<td>보험상품</td>
-					<td><a href="makeAccount.jsp">보험 상품 II</a></td>
-				</tr>
-			</tbody>
-		</table>
-
-
-
+		</div>
 
 	</div>
+
 
 	<footer class="BankFooter">
 		<div class="BankFooterContent">

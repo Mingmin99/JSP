@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +31,7 @@ body {
 	text-align: center;
 }
 
+/* 메뉴바 */
 .navbar-nav .nav-item {
 	margin-left: 50px;
 }
@@ -69,72 +72,82 @@ body {
 }
 
 .section1 {
-	background: linear-gradient(to bottom, #C1E9E8, #FFFFFF);
-	height: 350px;
+	background-color: #FFFFFF;
+	height: 800px;
 }
 
-.fw-bold {
-	padding-left: 200px;
-	padding-top: 100px;
-}
-
-.fw-normal {
-	padding-left: 200px;
-	padding-top: 5px;
-}
-
-.DivQuickButtonWrap {
-	position: absolute;
-	right: 0;
-	width: 332px;
-	height: 124px;
-	margin-right: 200px;
-	top: 220px;
-}
-
-.Link {
-	width: 150px;
-	height: 100px;
-	position: absolute;
-	border-radius: 10px;
-}
-
-.Link:first-child {
-	left: 0;
-	background: linear-gradient(180deg, rgba(0, 151, 147, 0.94) 0%, #009591
-		100%);
-}
-
-.Link:last-child {
-	left: 180px;
-	background: linear-gradient(180deg, rgba(52, 59, 84, 0.94) 0%, #323850
-		100%);
-}
-
-.LinkText {
-	width: 36.34px;
-	height: 29px;
-	left: 14px;
-	top: 70px;
-	position: absolute;
-	color: white;
-	font-size: 20px;
-	font-family: Noto Sans KR;
-	font-weight: 700;
-	line-height: 18px;
-	word-wrap: break-word;
-}
-
-.section2 {
-	background-color: #ECF0F1;
+.transfer-info {
+	width: 100%;
 	height: 150px;
+	position: relative;
 }
 
-.section3 {
-	background-color: #fffff;
-	height: 200px;
+.title {
+	left: 180px;
+	top: 45px;
+	position: absolute;
+	text-align: center;
+	color: black;
+	font-size: 30px;
+	font-family: Noto Sans KR;
 }
 
+/* 은행선택 */
+.select_bank {
+	left: 360px;
+	top: 40px;
+	position: absolute;
+}
+
+.btn-group {
+	display: flex;
+	gap: 10px;
+}
+
+.btn-group .btn {
+	font-size: 18px;
+	font-family: Inter, sans-serif;
+	font-weight: 500;
+	line-height: 1.5;
+	padding: 10px 20px;
+	border-radius: 30px;
+	background-color: #f7f7f7;
+	color: #080C0C;
+	transition: background-color 0.3s, color 0.3s;
+	border: 2px solid #f7f7f7;
+}
+
+.btn-group .btn:hover, .btn-group .btn:focus {
+	background-color: #419390;
+	color: #ffffff;
+	border-color: #419390;
+}
+
+table {
+	width: 80%;
+	margin: 0 auto;
+	background-color: #fff;
+	border-collapse: collapse;
+	border: 1px solid #ddd;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+th {
+	background-color: #419390;
+	color: #fff;
+	font-weight: bold;
+}
+
+tr:hover {
+	background-color: #f9f9f9;
+}
+
+/* 푸터 */
 .BankFooter {
 	background-color: #f7f7f7;
 	padding: 20px;
@@ -175,10 +188,9 @@ body {
 }
 
 .ContactItem {
-	width: 258.27px;
+	width: 250px;
 	height: 40px;
 	position: absolute;
-	bottom: -360px;
 	margin-right: 150px;
 	right: 0;
 }
@@ -246,19 +258,26 @@ body {
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<c:url var="logoUrl" value="/hanabank.jpg" />
-				<a class="navbar-brand" href="#"> <img src="${logoUrl}" alt="로고"
-					class="logo-img">
+				<a class="navbar-brand" href="mainHana.jsp"> <img
+					src="${logoUrl}" alt="로고" class="logo-img">
 				</a>
+
+
 				<div class="collapse navbar-collapse justify-content-center"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">계좌조회</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">계좌이체</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">계좌개설</a></li>
+							aria-current="page" href="innerAccount.jsp">계좌조회</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							aria-current="page" href="transferInfo.jsp">거래내역조회</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="accountTransferInner.jsp">계좌이체</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="makeAccountSelect.jsp">계좌개설</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">마이페이지</a></li>
 					</ul>
+
 				</div>
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search"
@@ -267,42 +286,61 @@ body {
 				</form>
 			</div>
 		</nav>
-
-
 	</div>
 	<hr class="navbar-divider">
-	<div class="section1">
-		<!-- 섹션 1 내용 -->
-		<div class="hello word">
-			<p class="fw-bold" style="font-size: 25px;">최민영 님만을 위한 하나은행 오픈뱅킹
-				서비스</p>
-			<p class="fw-normal">
-				일상에서 더 쉽고 편리하게!<br>하나오픈뱅킹이 언제나 함께 합니다!
-			</p>
-		</div>
 
-		<div class="DivQuickButtonWrap">
-			<div class="Link">
-				<div class="LinkText">조회</div>
+
+	<div class="section1">
+
+
+
+		<div class="transfer-info">
+			<div class="title">거래내역 조회</div>
+			<div class="select_bank">
+				<div class="btn-group" role="group" aria-label="Select Bank">
+					<button type="button" class="btn btn-secondary"
+						onclick="location.href='transferInfo.jsp'">All</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="location.href='transferInfo.jsp'">하나은행</button>
+					<button type="button" class="btn btn-secondary"
+						onclick="location.href='transferInfoOuter.jsp'">다른은행</button>
+				</div>
 			</div>
-			<div class="Link">
-				<div class="LinkText">이체</div>
-			</div>
+
 		</div>
+		
+		
+		<table>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>내계좌</th>
+					<th>상대계좌</th>
+					<th>거래구분</th>
+					<th>거래금액</th>
+					<th>내용</th>
+					<th>거래일자</th>
+					<th>거래시간</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${transactionList}" var="transaction">
+					<tr>
+						<td>${transaction.id}</td>
+						<td>${transaction.myAccount}</td>
+						<td>${transaction.otherAccount}</td>
+						<td>${transaction.transactionType}</td>
+						<td>${transaction.amount}</td>
+						<td>${transaction.description}</td>
+						<td>${transaction.date}</td>
+						<td>${transaction.time}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+
 
 	</div>
-
-	<div class="section2"></div>
-
-	<div class="section3"></div>
-
-	<div class="section4"></div>
-
-
-
-
-
-
 
 	<footer class="BankFooter">
 		<div class="BankFooterContent">
