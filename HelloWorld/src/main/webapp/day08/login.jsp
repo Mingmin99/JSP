@@ -30,7 +30,6 @@ body {
 }
 
 /* 메뉴바 */
-/* 메뉴바 */
 .navbar-nav .nav-item {
 	margin-left: 60px;
 }
@@ -75,13 +74,12 @@ body {
 	margin-left: 50px;
 }
 
-/* 제목  */
 .section1 {
 	background-color: #FFFFFF;
-	height: 1000px;
+	height: 1100px;
 }
 
-.select-register-account {
+.login {
 	width: 100%;
 	height: 150px;
 	position: relative;
@@ -93,67 +91,71 @@ body {
 	position: absolute;
 	text-align: center;
 	color: black;
-	font-size: 30px;
+	font-size: 25px;
 	font-family: Noto Sans KR;
 }
 
-table {
-	width: 80%;
-	margin: 0 auto;
-	background-color: #fff;
-	border-collapse: collapse;
-	border: 1px solid #ddd;
+.container {
+	background-color: #ECECEC;
+	width: 50%;
+	padding: 20px;
+	padding-top: 50px;
+	margin-bottom: 30px;
 }
 
-th, td {
-	padding: 10px;
-	text-align: left;
-	border-bottom: 1px solid #ddd;
-}
-
-th {
-	background-color: #419390;
-	color: #fff;
-	font-weight: bold;
-}
-
-tr:hover {
-	background-color: #f9f9f9;
-}
-
-.checkbox-container {
-	text-align: center;
-}
-
-.button-container {
-	position: absolute;
-	right: 0;
-	margin-top: -40px;
-	margin-left: 20px;
-	padding-right: 150px;
-}
-
-.button-container2 {
+h2 {
 	display: flex;
 	justify-content: center;
-	margin-top: 30px;
+	align-items: center;
 }
 
-.action-button, .cancel-button {
-	margin: 0 5px;
-	background-color: #009490;
-	color: #ffffff;
-	padding: 12px 24px;
-	border: none;
-	border-radius: 5px;
-	font-size: 16px;
+.form-label {
 	font-weight: bold;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
 }
 
-.button-container button:hover {
-	background-color: #00756d;
+.form-control {
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	background-color: #FEFAFA;
+}
+
+.btn-primary {
+	margin-top: 10px;
+	width: 180px;
+	height: 45px;
+	background-color: #009591 !important;
+	color: #fff;
+	border: none;
+	padding: 20px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: 140px;
+	background-color: #009591 !important;
+}
+
+.btn-primary:hover {
+	background-color: #006f6c !important;
+}
+
+.signup-link {
+	margin-top: 10px;
+	margin-right: 5px;
+}
+
+.btn-link {
+	color: #007bff;
+	margin-right: 10px;
+}
+
+.logo-img2 {
+	margin-top: 10px;
+	transform: scale(1.1);
+}
+
+.mt-3 {
+	margin-left: 180px;
 }
 
 /* 푸터 */
@@ -285,11 +287,11 @@ tr:hover {
 							class="nav-link dropdown-toggle" href="#" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"> 마이페이지 </a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
+								<li><a class="dropdown-item" href="#">로그인</a></li>
 								<li><a class="dropdown-item" href="#">회원가입</a></li>
 							</ul></li>
 						<li class="nav-item" style="margin-right: -50px;"><a
-							class="nav-link" href="login.jsp">로그인</a></li>
+							class="nav-link" href="#">로그인</a></li>
 
 						<li class="nav-item"><a class="nav-link" href="#">회원가입</a></li>
 
@@ -311,88 +313,41 @@ tr:hover {
 
 	<div class="section1">
 
-		<div class="select-register-account">
+		<div class="login">
 
-			<div class="title">전체계좌 불러오기</div>
-		</div>
-
-
-		<script>
-			function selectAll() {
-				var checkboxes = document.getElementsByName('accountIds');
-				var selectAllCheckbox = document
-						.getElementById('selectAllCheckbox');
-
-				for (var i = 0; i < checkboxes.length; i++) {
-					checkboxes[i].checked = selectAllCheckbox.checked;
-				}
-			}
-		</script>
-		<div class="table-container">
-			<div class="button-container">
-				<button id="selectAllCheckbox" onclick="selectAll()">전체선택</button>
-				<button onclick="deselectAll()">전체해제</button>
+			<div class="title">
+				하나은행에 오신 걸 환영합니다.<br> 로그인 후 더 많은 서비스를 받아보세요.
 			</div>
-			<table>
-				<thead>
-					<tr>
-						<th>상품명</th>
-						<th>금융기간</th>
-						<th>계좌번호</th>
-						<th>잔액</th>
-						<th>상태</th>
-						<th>선택</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>상품 1</td>
-						<td>12개월</td>
-						<td>1234567890</td>
-						<td>1,000,000원</td>
-						<td>활성</td>
-						<td class="checkbox-container"><input type="checkbox"
-							name="accountIds"></td>
-					</tr>
-					<tr>
-						<td>상품 2</td>
-						<td>24개월</td>
-						<td>0987654321</td>
-						<td>500,000원</td>
-						<td>활성</td>
-						<td class="checkbox-container"><input type="checkbox"
-							name="accountIds"></td>
-					</tr>
-					<!-- 추가적인 계좌 데이터를 여기에 추가할 수 있습니다 -->
-				</tbody>
-			</table>
-		</div>
-		<script>
-			function selectAll() {
-				var checkboxes = document.getElementsByName('accountIds');
-				for (var i = 0; i < checkboxes.length; i++) {
-					checkboxes[i].checked = true;
-				}
-			}
-
-			function deselectAll() {
-				var checkboxes = document.getElementsByName('accountIds');
-				for (var i = 0; i < checkboxes.length; i++) {
-					checkboxes[i].checked = false;
-				}
-			}
-		</script>
-
-		<div class="button-container2">
-			<button class="action-button"
-				onclick="location.href='innerAccount.jsp'">계좌연동하기</button>
-			<button class="cancel-button" onclick="location.href='mainHana.jsp'">취소</button>
 		</div>
 
+		<div class="container">
+			<h2>로그인</h2>
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<form>
+						<div class="mb-3">
+							<label for="username" class="form-label">아이디</label> <input
+								type="text" class="form-control" id="username">
+						</div>
+						<div class="mb-3">
+							<label for="password" class="form-label">비밀번호</label> <input
+								type="password" class="form-control" id="password">
+						</div>
+						<button type="submit" class="btn btn-primary">로그인</button>
+
+						<c:url var="logoUrl" value="/kakao_login_medium_narrow.png" />
+						<a class="navbar-brand" href="mainHana.jsp"> <img
+							src="${logoUrl}" alt="로고" class="logo-img2">
+						</a>
+						<p class="mt-3">
+							<a href="#" class="signup-link">회원가입 하러가기</a> <a
+								href="mainHana.jsp" class="btn btn-link">메인화면으로 돌아가기</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
-
-
-
 
 
 	<footer class="BankFooter">
@@ -420,3 +375,4 @@ tr:hover {
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+

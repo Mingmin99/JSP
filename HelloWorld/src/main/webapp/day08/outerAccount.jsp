@@ -31,7 +31,7 @@ body {
 
 /* 메뉴바 */
 .navbar-nav .nav-item {
-	margin-left: 50px;
+	margin-left: 60px;
 }
 
 .navbar-nav .nav-link {
@@ -39,27 +39,28 @@ body {
 }
 
 .navbar {
-	padding-top: 10px; /* 헤더 상단 여백 조절 */
-	padding-bottom: 10px; /* 헤더 하단 여백 조절 */
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .navbar-brand {
-	margin-left: 50px; /* 로고 이미지와 메뉴 간격 조절 */
+	margin-left: 10px;
+	margin-bottom: 10px;
 }
 
 .navbar-nav {
-	margin-left: -50px; /* 메뉴 간격 조절 */
+	margin-left: -50px;
 }
 
 .logo-img {
-	margin-left: 80px;
+	margin-left: 40px;
 	max-width: 100px;
 	max-height: 100px;
 }
 
 .navbar {
-	padding-top: 3px; /* 헤더 상단 여백 조절 */
-	padding-bottom: 3px; /* 헤더 하단 여백 조절 */
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 .navbar-divider {
@@ -67,6 +68,10 @@ body {
 	margin-top: 0;
 	margin-bottom: 0;
 	width: 100%;
+}
+
+.navbar-nav .nav-item:nth-child(6) {
+	margin-left: 50px;
 }
 
 /* 제목  */
@@ -426,23 +431,31 @@ body {
 					src="${logoUrl}" alt="로고" class="logo-img">
 				</a>
 
-
 				<div class="collapse navbar-collapse justify-content-center"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link active"
 							aria-current="page" href="innerAccount.jsp">계좌조회</a></li>
-						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="accountTransferInner.jsp">계좌이체</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="makeAccountSelect.jsp">계좌개설</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">마이페이지</a></li>
-					</ul>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false"> 마이페이지 </a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
+								<li><a class="dropdown-item" href="#">회원가입</a></li>
+							</ul></li>
+						<li class="nav-item" style="margin-right: -50px;"><a
+							class="nav-link" href="login.jsp">로그인</a></li>
 
+						<li class="nav-item"><a class="nav-link" href="#">회원가입</a></li>
+
+					</ul>
 				</div>
+
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search"
 						aria-label="Search">
