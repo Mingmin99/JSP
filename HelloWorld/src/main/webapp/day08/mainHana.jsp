@@ -159,11 +159,12 @@ body {
 
 .section2 {
 	background-color: #ECF0F1;
-	height: 150px;
+	height: 160px;
 }
 
 .section-middle-wrap {
 	display: flex;
+margin-top: -10px;
 	justify-content: center;
 	align-items: center;
 	background: #ECF0F1;
