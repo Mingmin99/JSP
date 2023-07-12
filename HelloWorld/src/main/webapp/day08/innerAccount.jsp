@@ -28,10 +28,10 @@ body {
 	padding: 20px;
 	text-align: center;
 }
-
 /* 메뉴바 */
+
 .navbar-nav .nav-item {
-	margin-left: 60px;
+	margin-left: 40px;
 }
 
 .navbar-nav .nav-link {
@@ -44,12 +44,11 @@ body {
 }
 
 .navbar-brand {
-	margin-left: 10px;
 	margin-bottom: 10px;
 }
 
 .navbar-nav {
-	margin-left: -50px;
+	margin-left: -30px;
 }
 
 .logo-img {
@@ -71,7 +70,7 @@ body {
 }
 
 .navbar-nav .nav-item:nth-child(6) {
-	margin-left: 50px;
+	margin-left: 30px;
 }
 
 /* 제목  */
@@ -379,6 +378,7 @@ body {
 <body>
 	<div class="header">
 		<!-- 메뉴바 내용 -->
+		<!-- 메뉴바 내용 -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<c:url var="logoUrl" value="/hanabank.jpg" />
@@ -395,6 +395,8 @@ body {
 							href="accountTransferInner.jsp">계좌이체</a></li>
 						<li class="nav-item"><a class="nav-link"
 							href="makeAccountSelect.jsp">계좌개설</a></li>
+						<li class="nav-item"><a class="nav-link" href="transferInfo.jsp">거래내역조회</a>
+						</li>
 						<li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" role="button"
@@ -403,11 +405,9 @@ body {
 								<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
 								<li><a class="dropdown-item" href="#">회원가입</a></li>
 							</ul></li>
-						<li class="nav-item" style="margin-right: -50px;"><a
+						<li class="nav-item" style="margin-right: -30px;"><a
 							class="nav-link" href="login.jsp">로그인</a></li>
-
 						<li class="nav-item"><a class="nav-link" href="#">회원가입</a></li>
-
 					</ul>
 				</div>
 
@@ -418,6 +418,8 @@ body {
 				</form>
 			</div>
 		</nav>
+
+
 	</div>
 	<hr class="navbar-divider">
 
