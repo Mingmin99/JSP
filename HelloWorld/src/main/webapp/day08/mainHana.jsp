@@ -81,7 +81,7 @@ body {
 }
 
 .hello-word {
-	margin-left: 5%;
+	margin-left: 8%;
 	text-align: left;
 }
 
@@ -97,7 +97,7 @@ body {
 .DivQuickButtonWrap {
 	display: flex;
 	justify-content: flex-end;
-	margin-right: 200px;
+	margin-right: 8%;
 	margin-bottom: 10px;
 }
 
@@ -108,17 +108,19 @@ body {
 	border-radius: 10px;
 	border: 1px solid #CCCCCC;
 	margin-right: 20px;
-	margin-top: -50px;
+	margin-top: -60px;
 }
 
 .Link1 {
 	width: 200px;
-	height: 80px;
+	height: 50px;
 	position: relative;
 	border-radius: 10px;
 	border: 1px solid #CCCCCC;
-	margin-left: 5%;
-	margin-top: -50px;
+	margin-left: 8%;
+	margin-top: -60px;
+	background-color: transparent;
+	/
 }
 
 .LinkText {
