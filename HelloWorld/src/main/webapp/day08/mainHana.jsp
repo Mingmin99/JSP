@@ -33,7 +33,7 @@ body {
 
 /* 메뉴바 */
 .navbar-nav .nav-item {
-	margin-left: 40px;
+	margin-left: 2rem;
 }
 
 .navbar-nav .nav-link {
@@ -41,27 +41,27 @@ body {
 }
 
 .navbar {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 .navbar-brand {
-	margin-bottom: 10px;
+	margin-bottom: 1rem;
 }
 
 .navbar-nav {
-	margin-left: -30px;
+	margin-left: -1.5rem;
 }
 
 .logo-img {
-	margin-left: 40px;
+	margin-left: 5rem;
 	max-width: 100px;
 	max-height: 100px;
 }
 
 .navbar {
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
 }
 
 .navbar-divider {
@@ -72,67 +72,60 @@ body {
 }
 
 .navbar-nav .nav-item:nth-child(6) {
-	margin-left: 30px;
+	margin-left: 1.5rem;
 }
-
 
 .section1 {
 	background: linear-gradient(to bottom, #C1E9E8, #FFFFFF);
 	height: 350px;
 }
 
+.hello-word {
+	margin-left: 5%;
+	text-align: left;
+}
+
 .fw-bold {
-	padding-left: 200px;
-	padding-top: 100px;
+	padding-top: 50px;
+	font-size: 25px;
 }
 
 .fw-normal {
-	padding-left: 200px;
-	padding-top: 5px;
+	margin-top: 10px;
 }
 
 .DivQuickButtonWrap {
-	position: absolute;
-	right: 0;
-	width: 482px; /* 수정: 버튼 두 개와 추가 버튼의 너비 합계 */
-	height: 124px;
+	display: flex;
+	justify-content: flex-end;
 	margin-right: 200px;
-	top: 220px;
+	margin-bottom: 10px;
 }
 
 .Link {
 	width: 150px;
 	height: 100px;
-	position: absolute;
+	position: relative;
 	border-radius: 10px;
-	border: 1px solid #CCCCCC; 
+	border: 1px solid #CCCCCC;
+	margin-right: 20px;
+	margin-top: -50px;
 }
 
-.Link:first-child {
-	left: 180px;
-	background: #009591;
-}
-
-.Link:nth-child(2) {
-	left: 360px;
-	background: #323850;
-}
-
-/* 수정: 추가 버튼 스타일 */
-.Link:last-child {
-	width: 220px;
-	height: 60px;
-	top: 130px;
-	left: -550px;
-	background: none;
+.Link1 {
+	width: 200px;
+	height: 80px;
+	position: relative;
+	border-radius: 10px;
+	border: 1px solid #CCCCCC;
+	margin-left: 5%;
+	margin-top: -50px;
 }
 
 .LinkText {
-	width: 36.34px;
-	height: 29px;
-	left: 14px;
-	top: 70px;
 	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	color: white;
 	font-size: 20px;
 	font-family: Noto Sans KR;
@@ -142,11 +135,10 @@ body {
 }
 
 .LinkText1 {
-	width: auto;
-	left: 50%;
-	top: 30%;
-	transform: translateX(-50%);
 	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	color: #595959;
 	font-size: 20px;
 	font-family: 'Noto Sans KR', sans-serif;
@@ -154,7 +146,22 @@ body {
 	line-height: 29px;
 	white-space: nowrap;
 	text-align: center;
-	line-height: 29px;
+}
+
+.Link:first-child {
+	background: #009591;
+}
+
+.Link:nth-child(2) {
+	background: #323850;
+}
+
+button.Link:focus {
+	outline: none;
+}
+
+button.Link:hover {
+	cursor: pointer;
 }
 
 .section2 {
@@ -164,7 +171,7 @@ body {
 
 .section-middle-wrap {
 	display: flex;
-margin-top: -10px;
+	margin-top: -10px;
 	justify-content: center;
 	align-items: center;
 	background: #ECF0F1;
@@ -483,7 +490,7 @@ margin-top: -10px;
 </head>
 <body>
 	<div class="header">
-	<!-- 메뉴바 내용 -->
+		<!-- 메뉴바 내용 -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<c:url var="logoUrl" value="/hanabank.jpg" />
@@ -530,7 +537,7 @@ margin-top: -10px;
 
 	<div class="section1">
 		<!-- 섹션 1 내용 -->
-		<div class="hello word">
+		<div class="hello-word">
 			<p class="fw-bold" style="font-size: 25px;">최민영 님만을 위한 하나은행 오픈뱅킹
 				서비스</p>
 			<p class="fw-normal">
@@ -539,23 +546,21 @@ margin-top: -10px;
 		</div>
 
 		<div class="DivQuickButtonWrap">
-			<button class="Link"
-				onclick="location.href='innerAccount.jsp'">
+			<button class="Link" onclick="location.href='innerAccount.jsp'">
 				<div class="LinkText">조회</div>
 			</button>
 			<button class="Link"
 				onclick="location.href='accountTransferInner.jsp'">
 				<div class="LinkText">이체</div>
 			</button>
-			<button class="Link"
-				onclick="location.href='selectRegisterAccount.jsp'">
-				<div class="LinkText1">오픈뱅킹 시작하기</div>
-			</button>
 		</div>
-
-
+		<button class="Link1"
+			onclick="location.href='selectRegisterAccount.jsp'">
+			<div class="LinkText1">오픈뱅킹 시작하기</div>
+		</button>
 
 	</div>
+
 
 	<div class="section2">
 		<!-- 섹션 2 내용 -->
@@ -646,7 +651,7 @@ margin-top: -10px;
 	</div>
 
 
-	
+
 	<footer class="BankFooter">
 		<div class="BankFooterContent">
 			<ul class="FooterLinks">

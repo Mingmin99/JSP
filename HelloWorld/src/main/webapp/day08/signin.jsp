@@ -90,8 +90,8 @@ body {
 	font-size: 30px;
 	font-family: Noto Sans KR;
 	left: 50%;
-	top: 200px;
-	margin-bottom: 20px;
+	top: 220px;
+	margin-bottom: 40px;
 	position: absolute;
 	transform: translate(-50%, -50%);
 }
@@ -697,9 +697,12 @@ input[type="button"]:hover, input[type="submit"]:hover {
 
 	<div class="section1">
 
-		<div class="title">회원 가입</div>
+		<div class="title">
+			회원 가입 <br> 회원가입 후 더 편리한 하나오픈 뱅킹을 이용보세요!<br> <br>
+		</div>
 
 		<div class="container">
+
 			<%
 			String message = (String) session.getAttribute("message");
 			%>

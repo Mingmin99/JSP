@@ -85,22 +85,21 @@ body {
 }
 
 .title {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    text-align: center;
-    color: black;
-    font-size: 25px;
-    font-family: Noto Sans KR;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	text-align: center;
+	color: black;
+	font-size: 25px;
+	font-family: Noto Sans KR;
 }
 
-
 .container {
-	background-color: #ECECEC;
+	background-color: #f8f8f8;
 	width: 50%;
 	padding: 20px;
 	padding-top: 50px;
@@ -135,7 +134,8 @@ h2 {
 	padding: 20px 20px;
 	border-radius: 5px;
 	cursor: pointer;
-	margin-left: 140px;
+	margin-left: 120px;
+	margin-right: 30px;
 	background-color: #009591 !important;
 }
 
@@ -145,7 +145,7 @@ h2 {
 
 .signup-link {
 	margin-top: 10px;
-	margin-right: 5px;
+	margin-right: 10px;
 }
 
 .btn-link {
