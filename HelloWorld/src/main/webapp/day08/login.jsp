@@ -85,14 +85,19 @@ body {
 }
 
 .title {
-	left: 180px;
-	top: 45px;
-	position: absolute;
-	text-align: center;
-	color: black;
-	font-size: 25px;
-	font-family: Noto Sans KR;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-family: Noto Sans KR;
 }
+
 
 .container {
 	background-color: #ECECEC;
