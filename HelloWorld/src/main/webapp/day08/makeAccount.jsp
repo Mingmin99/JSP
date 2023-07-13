@@ -618,6 +618,8 @@ body {
 					</div>
 					<div class="button-container">
 						<button type="submit">계좌 개설</button>
+						<button type="submit">계좌 실명확인</button>
+
 					</div>
 				</form>
 			</div>
