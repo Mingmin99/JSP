@@ -64,60 +64,115 @@ body {
 }
 
 .navbar-divider {
-	border-top: 2px solid #009591;
+	border-top: 2px solid #0082C9;
 	margin-top: 0;
 	margin-bottom: 0;
 	width: 100%;
 }
-
-.section1 {
-	background: linear-gradient(to bottom, #0082C9, #FFFFFF);
-	height: 350px;
+.navbar-nav .nav-item:nth-child(6) {
+	margin-left: 1.5rem;
 }
 
-.fw-bold {
-	padding-left: 200px;
+#carouselExampleIndicators .section1 {
+	background: linear-gradient(to bottom, #69C8FC, #FFFFFF);
+	height: 400px;
+}
+
+#carouselExampleIndicators .hello-word {
+	margin-left: 12%;
+	margin-right: 20%;
+	text-align: left;
+	white-space: nowrap;
+}
+
+#carouselExampleIndicators .fw-bold {
+	padding-top: 60px;
+	margin-left: 5%;
+	font-size: 30px;
+	font-weight: 500;
+	font-family: 'Helvetica', sans-serif; /* Helvetica 폰트를 적용합니다. */
+	color: #333;
+}
+
+#carouselExampleIndicators .fw-normal {
+	margin-top: 20px;
+	margin-left: 5%;
+	font-family: 'Helvetica', sans-serif; /* Helvetica 폰트를 적용합니다. */
+	font-size: 20px; /* 글자 크기를 조절합니다. */
+	color: #666;
+}
+
+#carouselExampleIndicators .fw-bold2 {
 	padding-top: 100px;
+	font-size: 35px;
+		margin-left: 5%;
+	font-weight: 600;
+	font-family: 'Helvetica', sans-serif;
+	/* Helvetica 폰트를 적용합니다. */
+	color: #333;
 }
 
-.fw-normal {
-	padding-left: 200px;
-	padding-top: 5px;
+#carouselExampleIndicators .fw-normal2 {
+	margin-top: 20px;
+		margin-left: 5%;
+	font-family: 'Helvetica', sans-serif; /* Helvetica 폰트를 적용합니다. */
+	font-size: 20px; /* 글자 크기를 조절합니다. */
+	color: #666; /* 더 밝은 회색으로 변경하였습니다. */
 }
 
-.DivQuickButtonWrap {
-	position: absolute;
-	right: 0;
-	width: 332px;
-	height: 124px;
-	margin-right: 200px;
-	top: 220px;
+#carouselExampleIndicators .fw-bold2,
+#carouselExampleIndicators .fw-normal2,
+#carouselExampleIndicators .fw-bold,
+#carouselExampleIndicators .fw-normal{
+	/* 애니메이션 규칙 추가 */
+	animation: fadeIn 2s ease-in-out;
 }
 
-.Link {
+/* 애니메이션 키프레임 정의 */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+#carouselExampleIndicators .DivQuickButtonWrap {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 15%;
+	margin-bottom: 10px;
+}
+
+#carouselExampleIndicators .Link {
 	width: 150px;
 	height: 100px;
-	position: absolute;
+	position: relative;
 	border-radius: 10px;
+	border: 1px solid #CCCCCC;
+	margin-right: 20px;
+	margin-top: -60px;
 }
 
-
-.Link:first-child {
-  left: 0;
-  background: linear-gradient(180deg, #0082C9 0%, #0082C9 100%);
+#carouselExampleIndicators .Link1 {
+	width: 200px;
+	height: 50px;
+	position: relative;
+	border-radius: 10px;
+	border: 1px solid #CCCCCC;
+	margin-left: 18%;
+	margin-top: -40px;
+	background-color: transparent;
+	
 }
-.Link:last-child {
-	left: 180px;
-	background: linear-gradient(180deg, rgba(52, 59, 84, 0.94) 0%, #323850
-		100%);
-}
 
-.LinkText {
-	width: 36.34px;
-	height: 29px;
-	left: 14px;
-	top: 70px;
+#carouselExampleIndicators .LinkText {
 	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	color: white;
 	font-size: 20px;
 	font-family: Noto Sans KR;
@@ -126,6 +181,75 @@ body {
 	word-wrap: break-word;
 }
 
+#carouselExampleIndicators .LinkText1 {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	color: #595959;
+	font-size: 20px;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 400;
+	line-height: 29px;
+	white-space: nowrap;
+	text-align: center;
+}
+
+#carouselExampleIndicators .Link:first-child {
+	background: #0082C9;
+}
+
+#carouselExampleIndicators .Link:nth-child(2) {
+	background: #323850;
+}
+
+#carouselExampleIndicators button.Link:focus {
+	outline: none;
+}
+
+#carouselExampleIndicators button.Link:hover {
+	cursor: pointer;
+}
+
+/* 기존 CSS */
+.content {
+	display: flex;
+	justify-content: center;
+}
+
+.img-container {
+	width: 40%;
+	margin-top: 5%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5%;
+	overflow: auto; /* 추가된 부분 */
+}
+
+.family-img {
+	width: 80%; /* 기본 이미지 크기 (작은 화면, 예: 노트북) */
+}
+.fund-img{
+margin-top: -30px;
+margin-left: 100px;
+	width: 60%; /* 기본 이미지 크기 (작은 화면, 예: 노트북) */
+}
+
+@media screen and (min-width: 1500px) {
+	.family-img {
+		width: 40%; /* 큰 화면 (1440px 이상)에서의 이미지 크기 */
+		margin-left: 400px;
+	}
+	
+	.fund-img
+	{ margin-left: 400px;
+		width: 40%; /* 큰 화면 (1440px 이상)에서의 이미지 크기 */
+	}
+	.img-container {
+		margin-top: 2%;
+		
+	}
+}
 .section2 {
 	background-color: #ECF0F1;
 	height: 150px;
@@ -342,25 +466,108 @@ body {
 	</div>
 	<hr class="navbar-divider">
 
-	<div class="section1">
-		<!-- 섹션 1 내용 -->
-		<div class="hello word">
-			<p class="fw-bold" style="font-size: 25px;">최민영 님만을 위한 우리은행 오픈뱅킹
-				서비스</p>
-			<p class="fw-normal">
-				일상에서 더 쉽고 편리하게!<br>우리오픈뱅킹이 언제나 함께 합니다!
-			</p>
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-bs-ride="true">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="0" class="active" aria-current="true"
+				aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="2" aria-label="Slide 3"></button>
 		</div>
+		<div id="carouselExampleIndicators" class="carousel slide"
+			data-bs-ride="true">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="0" class="active" aria-current="true"
+					aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="section1">
+						<!-- 섹션 1 내용 -->
+						<div class="hello-word">
+							<p class="fw-bold">
+								🔎 모든 계좌를 한 눈에! <br>최민영 님만을 위한 하나은행 오픈뱅킹 서비스!
+							</p>
+							<p class="fw-normal">
+								일상에서 더 쉽고 편리하게!<br>하나오픈뱅킹이 언제나 함께 합니다!
+							</p>
+						</div>
 
-		<div class="DivQuickButtonWrap">
-			<div class="Link">
-				<div class="LinkText">조회</div>
+						<div class="DivQuickButtonWrap">
+							<button class="Link" onclick="location.href='innerAccount.jsp'">
+								<div class="LinkText">조회</div>
+							</button>
+							<button class="Link"
+								onclick="location.href='accountTransferInner.jsp'">
+								<div class="LinkText">이체</div>
+							</button>
+						</div>
+						<button class="Link1"
+							onclick="location.href='selectRegisterAccount.jsp'">
+							<div class="LinkText1">오픈뱅킹 시작하기</div>
+						</button>
+
+					</div>
+				</div>
+
+
+				<div class="carousel-item">
+					<div class="section1">
+						<div class="content">
+							<div class="hello-word">
+								<p class="fw-bold2">행복한 미래를 위한 금융 파트너, 우리은행 🏦</p>
+								<p class="fw-normal2">
+									당신의 미래를 함께 설계합니다.<br> 경제적 자유를 위한 첫 걸음, 우리은행에서 시작하세요 💙
+								</p>
+							</div>
+							<div class="img-container">
+								<c:url var="logoUrl" value="/family.png" />
+								<a class="family" href=#> <img src="${logoUrl}" alt="패밀리"
+									class="family-img">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="carousel-item">
+					<div class="section1">
+						<div class="content">
+							<div class="hello-word">
+								<p class="fw-bold2">고객 만족을 위한 변화,<br>우리은행에서 만나보세요 🌈 </p>   
+								<p class="fw-normal2">차별화된 금융 서비스 세상으로 당신을 초대합니다 🌱</p>
+							</div>
+							<div class="img-container">
+								<c:url var="logoUrl" value="/fund.png" />
+								<a class="fund" href=#> <img src="${logoUrl}" alt="펀드"
+									class="fund-img">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
-			<div class="Link">
-				<div class="LinkText">이체</div>
-			</div>
+			<button class="carousel-control-prev" type="button"
+				data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button"
+				data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
 		</div>
-
 	</div>
 
 	<div class="section2">

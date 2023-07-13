@@ -73,7 +73,6 @@ body {
 	margin-left: 30px;
 }
 
-
 /* 제목  */
 .section1 {
 	background-color: #FFFFFF;
@@ -129,7 +128,7 @@ tr:hover {
 	right: 0;
 	margin-top: -40px;
 	margin-left: 20px;
-	padding-right: 150px;
+	padding-right: 10%;
 }
 
 .button-container2 {
@@ -338,7 +337,7 @@ tr:hover {
 				<thead>
 					<tr>
 						<th>상품명</th>
-						<th>금융기간</th>
+						<th>금융기관</th>
 						<th>계좌번호</th>
 						<th>잔액</th>
 						<th>상태</th>
@@ -347,8 +346,8 @@ tr:hover {
 				</thead>
 				<tbody>
 					<tr>
-						<td>상품 1</td>
-						<td>12개월</td>
+						<td>우리 적금</td>
+						<td>우리은행</td>
 						<td>1234567890</td>
 						<td>1,000,000원</td>
 						<td>활성</td>
@@ -356,14 +355,51 @@ tr:hover {
 							name="accountIds"></td>
 					</tr>
 					<tr>
-						<td>상품 2</td>
-						<td>24개월</td>
+						<td>국민 입출금 통장</td>
+						<td>국민은행</td>
 						<td>0987654321</td>
 						<td>500,000원</td>
 						<td>활성</td>
 						<td class="checkbox-container"><input type="checkbox"
 							name="accountIds"></td>
 					</tr>
+					<tr>
+						<td>IBK 기업 정기예금</td>
+						<td>신한은행</td>
+						<td>1122334455</td>
+						<td>2,000,000원</td>
+						<td>활성</td>
+						<td class="checkbox-container"><input type="checkbox"
+							name="accountIds"></td>
+					</tr>
+					<tr>
+						<td>농협 체크카드</td>
+						<td>하나은행</td>
+						<td>2233445566</td>
+						<td>1,500,000원</td>
+						<td>활성</td>
+						<td class="checkbox-container"><input type="checkbox"
+							name="accountIds"></td>
+					</tr>
+					<tr>
+						<td>농협 저축예금</td>
+						<td>농협은행</td>
+						<td>3344556677</td>
+						<td>2,500,000원</td>
+						<td>활성</td>
+						<td class="checkbox-container"><input type="checkbox"
+							name="accountIds"></td>
+					</tr>
+					<tr>
+						<td>IBK 기업은행 입출금 통장</td>
+						<td>IBK 기업은행</td>
+						<td>4455667788</td>
+						<td>1,000,000원</td>
+						<td>활성</td>
+						<td class="checkbox-container"><input type="checkbox"
+							name="accountIds"></td>
+					</tr>
+
 					<!-- 추가적인 계좌 데이터를 여기에 추가할 수 있습니다 -->
 				</tbody>
 			</table>

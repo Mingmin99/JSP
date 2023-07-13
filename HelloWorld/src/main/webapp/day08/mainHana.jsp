@@ -75,33 +75,80 @@ body {
 	margin-left: 1.5rem;
 }
 
-.section1 {
+#carouselExampleIndicators .section1 {
 	background: linear-gradient(to bottom, #C1E9E8, #FFFFFF);
-	height: 350px;
+	height: 400px;
 }
 
-.hello-word {
-	margin-left: 8%;
+#carouselExampleIndicators .hello-word {
+	margin-left: 12%;
+	margin-right: 20%;
 	text-align: left;
+	white-space: nowrap;
 }
 
-.fw-bold {
-	padding-top: 50px;
-	font-size: 25px;
+#carouselExampleIndicators .fw-bold {
+	padding-top: 60px;
+	margin-left: 5%;
+	font-size: 30px;
+	font-weight: 500;
+	font-family: 'Helvetica', sans-serif; /* Helvetica 폰트를 적용합니다. */
+	color: #333;
 }
 
-.fw-normal {
-	margin-top: 10px;
+#carouselExampleIndicators .fw-normal {
+	margin-top: 20px;
+	margin-left: 5%;
+	font-family: 'Helvetica', sans-serif; /* Helvetica 폰트를 적용합니다. */
+	font-size: 20px; /* 글자 크기를 조절합니다. */
+	color: #666;
 }
 
-.DivQuickButtonWrap {
+#carouselExampleIndicators .fw-bold2 {
+	padding-top: 100px;
+	font-size: 35px;
+		margin-left: 5%;
+	font-weight: 600;
+	font-family: 'Helvetica', sans-serif;
+	/* Helvetica 폰트를 적용합니다. */
+	color: #333;
+}
+
+#carouselExampleIndicators .fw-normal2 {
+	margin-top: 20px;
+		margin-left: 5%;
+	font-family: 'Helvetica', sans-serif; /* Helvetica 폰트를 적용합니다. */
+	font-size: 20px; /* 글자 크기를 조절합니다. */
+	color: #666; /* 더 밝은 회색으로 변경하였습니다. */
+}
+
+#carouselExampleIndicators .fw-bold2,
+#carouselExampleIndicators .fw-normal2,
+#carouselExampleIndicators .fw-bold,
+#carouselExampleIndicators .fw-normal{
+	/* 애니메이션 규칙 추가 */
+	animation: fadeIn 2s ease-in-out;
+}
+
+/* 애니메이션 키프레임 정의 */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+#carouselExampleIndicators .DivQuickButtonWrap {
 	display: flex;
 	justify-content: flex-end;
-	margin-right: 8%;
+	margin-right: 15%;
 	margin-bottom: 10px;
 }
 
-.Link {
+#carouselExampleIndicators .Link {
 	width: 150px;
 	height: 100px;
 	position: relative;
@@ -111,19 +158,19 @@ body {
 	margin-top: -60px;
 }
 
-.Link1 {
+#carouselExampleIndicators .Link1 {
 	width: 200px;
 	height: 50px;
 	position: relative;
 	border-radius: 10px;
 	border: 1px solid #CCCCCC;
-	margin-left: 8%;
-	margin-top: -60px;
+	margin-left: 18%;
+	margin-top: -40px;
 	background-color: transparent;
-	/
+	
 }
 
-.LinkText {
+#carouselExampleIndicators .LinkText {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -136,7 +183,7 @@ body {
 	word-wrap: break-word;
 }
 
-.LinkText1 {
+#carouselExampleIndicators .LinkText1 {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -150,20 +197,60 @@ body {
 	text-align: center;
 }
 
-.Link:first-child {
+#carouselExampleIndicators .Link:first-child {
 	background: #009591;
 }
 
-.Link:nth-child(2) {
+#carouselExampleIndicators .Link:nth-child(2) {
 	background: #323850;
 }
 
-button.Link:focus {
+#carouselExampleIndicators button.Link:focus {
 	outline: none;
 }
 
-button.Link:hover {
+#carouselExampleIndicators button.Link:hover {
 	cursor: pointer;
+}
+
+/* 기존 CSS */
+.content {
+	display: flex;
+	justify-content: center;
+}
+
+.img-container {
+	width: 40%;
+	margin-top: 5%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5%;
+	overflow: auto; /* 추가된 부분 */
+}
+
+.family-img {
+	width: 80%; /* 기본 이미지 크기 (작은 화면, 예: 노트북) */
+}
+.fund-img{
+margin-top: -30px;
+margin-left: 100px;
+	width: 60%; /* 기본 이미지 크기 (작은 화면, 예: 노트북) */
+}
+
+@media screen and (min-width: 1500px) {
+	.family-img {
+		width: 40%; /* 큰 화면 (1440px 이상)에서의 이미지 크기 */
+		margin-left: 400px;
+	}
+	
+	.fund-img
+	{ margin-left: 400px;
+		width: 40%; /* 큰 화면 (1440px 이상)에서의 이미지 크기 */
+	}
+	.img-container {
+		margin-top: 2%;
+		
+	}
 }
 
 .section2 {
@@ -484,11 +571,13 @@ button.Link:hover {
 .ContactNumber.Strong15991111 {
 	left: 105px;
 }
+}
 </style>
 
 <!-- 부트스트랩 연결 -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 	<div class="header">
@@ -537,38 +626,114 @@ button.Link:hover {
 	</div>
 	<hr class="navbar-divider">
 
-	<div class="section1">
-		<!-- 섹션 1 내용 -->
-		<div class="hello-word">
-			<p class="fw-bold" style="font-size: 25px;">최민영 님만을 위한 하나은행 오픈뱅킹
-				서비스</p>
-			<p class="fw-normal">
-				일상에서 더 쉽고 편리하게!<br>하나오픈뱅킹이 언제나 함께 합니다!
-			</p>
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-bs-ride="true">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="0" class="active" aria-current="true"
+				aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="2" aria-label="Slide 3"></button>
 		</div>
+		<div id="carouselExampleIndicators" class="carousel slide"
+			data-bs-ride="true">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="0" class="active" aria-current="true"
+					aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="section1">
+						<!-- 섹션 1 내용 -->
+						<div class="hello-word">
+							<p class="fw-bold">
+								🔎 모든 계좌를 한 눈에! <br>최민영 님만을 위한 하나은행 오픈뱅킹 서비스!
+							</p>
+							<p class="fw-normal">
+								일상에서 더 쉽고 편리하게!<br>하나오픈뱅킹이 언제나 함께 합니다!
+							</p>
+						</div>
 
-		<div class="DivQuickButtonWrap">
-			<button class="Link" onclick="location.href='innerAccount.jsp'">
-				<div class="LinkText">조회</div>
+						<div class="DivQuickButtonWrap">
+							<button class="Link" onclick="location.href='innerAccount.jsp'">
+								<div class="LinkText">조회</div>
+							</button>
+							<button class="Link"
+								onclick="location.href='accountTransferInner.jsp'">
+								<div class="LinkText">이체</div>
+							</button>
+						</div>
+						<button class="Link1"
+							onclick="location.href='selectRegisterAccount.jsp'">
+							<div class="LinkText1">오픈뱅킹 시작하기</div>
+						</button>
+
+					</div>
+				</div>
+
+
+				<div class="carousel-item">
+					<div class="section1">
+						<div class="content">
+							<div class="hello-word">
+								<p class="fw-bold2">행복한 미래를 위한 금융 파트너, 하나은행 🏦</p>
+								<p class="fw-normal2">
+									당신의 미래를 함께 설계합니다.<br> 경제적 자유를 위한 첫 걸음, 하나은행에서 시작하세요 💚
+								</p>
+							</div>
+							<div class="img-container">
+								<c:url var="logoUrl" value="/family.png" />
+								<a class="family" href=#> <img src="${logoUrl}" alt="패밀리"
+									class="family-img">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="carousel-item">
+					<div class="section1">
+						<div class="content">
+							<div class="hello-word">
+								<p class="fw-bold2">고객 만족을 위한 변화,<br>하나은행에서 만나보세요 🌈 </p>   
+								<p class="fw-normal2">차별화된 금융 서비스 세상으로 당신을 초대합니다 🌱</p>
+							</div>
+							<div class="img-container">
+								<c:url var="logoUrl" value="/fund.png" />
+								<a class="fund" href=#> <img src="${logoUrl}" alt="펀드"
+									class="fund-img">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<button class="carousel-control-prev" type="button"
+				data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
 			</button>
-			<button class="Link"
-				onclick="location.href='accountTransferInner.jsp'">
-				<div class="LinkText">이체</div>
+			<button class="carousel-control-next" type="button"
+				data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
-		<button class="Link1"
-			onclick="location.href='selectRegisterAccount.jsp'">
-			<div class="LinkText1">오픈뱅킹 시작하기</div>
-		</button>
-
 	</div>
-
-
 	<div class="section2">
 		<!-- 섹션 2 내용 -->
 		<div class="section-middle-wrap">
 			<div class="link-container">
-				<div class="link-item1">
+				<div class="link-item1" data-aos="fade-up">
 					<c:url var="logoUrl_bankbook" value="/bankbook.svg" />
 					<a class="logoUrl_bankbook" href="makeAccountSelect.jsp"> <img
 						src="${logoUrl_bankbook}" alt="아이콘" class="logoUrl_bankbook">
@@ -576,7 +741,7 @@ button.Link:hover {
 					<div class="link-text">손 쉬운 계좌개설</div>
 				</div>
 
-				<div class="link-item2">
+				<div class="link-item2" data-aos="fade-up" data-aos-delay="200">
 					<c:url var="logoUrl_send" value="/send.svg" />
 					<a class="logoUrl_send" href="accountTransferInner.jsp"> <img
 						src="${logoUrl_send}" alt="아이콘" class="logoUrl_send">
@@ -584,7 +749,7 @@ button.Link:hover {
 					<div class="link-text">간편한 이체</div>
 
 				</div>
-				<div class="link-item3">
+				<div class="link-item3" data-aos="fade-up" data-aos-delay="400">
 					<c:url var="logoUrl_glasses" value="/glasses.svg" />
 					<a class="logoUrl_glasses" href="innerAccount.jsp"> <img
 						src="${logoUrl_glasses}" alt="아이콘" class="logoUrl_glasses">
@@ -594,6 +759,15 @@ button.Link:hover {
 			</div>
 		</div>
 	</div>
+
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
+
+
+
 
 	<div class="section3">
 		<!-- 섹션 3 내용 -->
@@ -639,12 +813,12 @@ button.Link:hover {
 						src="${logoUrl_KB}" alt="로고" class="logoUrl_KB">
 					</a>
 					<c:url var="logoUrl_IBK" value="/IBK.jpg" />
-					<a class="logoUrl_IBK" href="mainIBK.jsp"> <img
-						src="${logoUrl_IBK}" alt="로고" class="logoUrl_IBK">
+					<a class="logoUrl_IBK" href="#"> <img src="${logoUrl_IBK}"
+						alt="로고" class="logoUrl_IBK">
 					</a>
 					<c:url var="logoUrl_NH" value="/NH.jpg" />
-					<a class="logoUrl_NH" href="mainNH.jsp"> <img
-						src="${logoUrl_NH}" alt="로고" class="logoUrl_NH">
+					<a class="logoUrl_NH" href="#"> <img src="${logoUrl_NH}"
+						alt="로고" class="logoUrl_NH">
 					</a>
 				</div>
 			</div>
