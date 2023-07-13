@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -75,99 +77,79 @@ body {
 
 .section1 {
 	background-color: #ffffff;
-	height: 1000px;
+	height: 1800px;
 }
 
-.login {
-	margin-top: 4%;
-	margin-left: 3%;
-	width: 40%;
+.mypage {
+	width: 100%;
 	height: 100px;
 	position: relative;
 	background-color: #8BBCB9;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 2px solid #ffffff; /* 보더 스타일 및 색상 설정 */
-	border-radius: 8px;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	color: #ffffff;
 }
 
 .title {
-	position: relative;
-	font-size: 20px;
-	color: #4D4D4D;
-	font-family: 'Arial', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 1.5px;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    text-align: left;
+    font-size: 25px;
+    color: #4D4D4D;
+    font-family: 'Arial', sans-serif; 
 }
 
-.container {
-	background-color: #f8f8f8;
-	width: 50%;
-	padding: 20px;
+
+.mypage-container {
+	max-width: 700px;
+	margin: auto;
+	background-color: #FFFFFF;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 	margin-top: 60px;
-	padding-top: 50px;
-	margin-bottom: 30px;
-	padding-top: 50px;
 }
 
 h2 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	color: #333;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
-.form-label {
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-group label {
+	color: #333;
 	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
 }
 
-.form-control {
-	padding: 20px;
-	border: 1px solid #ccc;
+.form-group p {
+	background-color: #E8E8E8;
+	padding: 10px;
 	border-radius: 5px;
-	box-sizing: border-box;
-	background-color: #FEFAFA;
+	color: #555;
 }
 
-.btn-primary {
-	margin-top: 10px;
-	width: 180px;
-	height: 45px;
-	background-color: #009591 !important;
-	color: #fff;
-	border: none;
-	padding: 20px 20px;
-	border-radius: 5px;
+.button-container {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.btn {
+	background-color: #8298A6;
+	color: #FFFFFF;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 30px;
+	padding: 12px 80px;
 	cursor: pointer;
-	margin-left: 120px;
-	margin-right: 30px;
-	background-color: #009591 !important;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: none;
 }
-
-.btn-primary:hover {
-	background-color: #006f6c !important;
-}
-
-.signup-link {
-	margin-top: 10px;
-	margin-right: 10px;
-}
-
-.btn-link {
-	color: #007bff;
-	margin-right: 10px;
-}
-
-.logo-img2 {
-	margin-top: 10px;
-	transform: scale(1.1);
-}
-
-.mt-3 {
-	margin-left: 180px;
-}
-
 /* 푸터 */
 .BankFooter {
 	background-color: #f7f7f7;
@@ -310,46 +292,61 @@ h2 {
 			</div>
 		</nav>
 
+
 	</div>
 	<hr class="navbar-divider">
 
 
 	<div class="section1">
 
-		<div class="login">
+		<div class="mypage">
 
-			<div class="title">
-				다시 돌아온 것을 환영합니다. <br>로그인을 시작하고 더 많은 서비스를 사용하세요!
+			<div class="title">안녕하세요! <br> 마이페이지에서 당신의 정보를 확인해보세요!</div>
+
+		</div>
+
+
+		<div class="mypage-container">
+			<h2>나의 정보</h2>
+			<div class="form-group">
+				<label for="name">이름:</label>
+				<p id="name">홍길동</p>
+			</div>
+
+			<div class="form-group">
+				<label for="id">아이디:</label>
+				<p id="id">gildong123</p>
+			</div>
+
+			<div class="form-group">
+				<label for="personal_id">주민등록번호:</label>
+				<p id="personal_id">123456-******</p>
+			</div>
+
+			<div class="form-group">
+				<label for="phone">전화번호:</label>
+				<p id="phone">010-1234-5678</p>
+			</div>
+
+			<div class="form-group">
+				<label for="address">주소:</label>
+				<p id="sample6_postcode">12345</p>
+				<p id="sample6_address">서울특별시 종로구 청운효자동</p>
+				<p id="sample6_detailAddress">1-2, 청운빌딩 3층</p>
+			</div>
+
+			<div class="form-group">
+				<label for="email">이메일:</label>
+				<p id="email">gildong123@email.com</p>
+			</div>
+
+			<div class="button-container">
+				<!-- <button type="button" onclick="editInfo()" class="btn btn-primary"
+					style="background-color: #8298A6 !important; color: #ffffff !important; font-size: 15px !important; font-weight: bold !important; border-radius: 30px !important; padding: 12px 80px; cursor: pointer;">
+					정보 수정</button> -->
 			</div>
 		</div>
 
-		<div class="container">
-			<h2>로그인</h2>
-			<div class="row justify-content-center">
-				<div class="col-md-6">
-					<form>
-						<div class="mb-3">
-							<label for="username" class="form-label">아이디</label> <input
-								type="text" class="form-control" id="username">
-						</div>
-						<div class="mb-3">
-							<label for="password" class="form-label">비밀번호</label> <input
-								type="password" class="form-control" id="password">
-						</div>
-						<button type="submit" class="btn btn-primary">로그인</button>
-
-						<c:url var="logoUrl" value="/kakao_login_medium_narrow.png" />
-						<a class="navbar-brand" href="mainHana.jsp"> <img
-							src="${logoUrl}" alt="로고" class="logo-img2">
-						</a>
-						<p class="mt-3">
-							<a href="#" class="signup-link">회원가입 하러가기</a> <a
-								href="mainHana.jsp" class="btn btn-link">메인화면으로 돌아가기</a>
-						</p>
-					</form>
-				</div>
-			</div>
-		</div>
 	</div>
 
 
@@ -378,4 +375,3 @@ h2 {
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-

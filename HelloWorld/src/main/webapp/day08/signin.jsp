@@ -77,24 +77,34 @@ body {
 
 /* 제목  */
 .section1 {
-	background-color: #FFFFFF;
-	min-height: 800px;
-	padding-top: 150px; </-
-	-position: relative;
-	-->
+	background-color: #ffffff;
+	height: 1800px;
+}
+
+.signin {
+	margin-top: 4%;
+	margin-left: 3%;
+	width: 40%;
+	height: 100px;
+	position: relative;
+	background-color: #8BBCB9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #ffffff; /* 보더 스타일 및 색상 설정 */
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-	text-align: center;
-	color: black;
-	font-size: 30px;
-	font-family: Noto Sans KR;
-	left: 50%;
-	top: 220px;
-	margin-bottom: 40px;
-	position: absolute;
-	transform: translate(-50%, -50%);
+	position: relative;
+	font-size: 20px;
+	color: #4D4D4D;
+	font-family: 'Arial', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
 }
+
 
 .container {
 	width: 80%;
@@ -103,7 +113,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 80%;
-	margin-top: 0px;
+	margin-top: 60px;
 	margin-bottom: 50px;
 }
 
@@ -665,13 +675,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 						<li class="nav-item"><a class="nav-link"
 							href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> 마이페이지 </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
-								<li><a class="dropdown-item" href="signin.jsp">회원가입</a></li>
-							</ul></li>
+						<li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
 						<li class="nav-item" style="margin-right: -30px;"><a
 							class="nav-link" href="login.jsp">로그인</a></li>
 						<li class="nav-item"><a class="nav-link" href="signin.jsp">회원가입</a></li>
@@ -685,6 +689,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 				</form>
 			</div>
 		</nav>
+
 	</div>
 
 
@@ -697,11 +702,15 @@ input[type="button"]:hover, input[type="submit"]:hover {
 
 	<div class="section1">
 
-		<div class="title">
-			회원 가입 <br> 회원가입 후 더 편리한 하나오픈 뱅킹을 이용보세요!<br> <br>
+		<div class="signin">
+			<div class="title">
+				환영합니다. 우리 서비스의 멤버가 되어보세요!<br> 당신의 계정을 만들어주세요.<br>
+			</div>
 		</div>
 
+
 		<div class="container">
+
 
 			<%
 			String message = (String) session.getAttribute("message");
@@ -722,10 +731,13 @@ input[type="button"]:hover, input[type="submit"]:hover {
       }
    </script>
 			<div class="form-container">
+
+
 				<form action="join.member" method="post"
 					onsubmit="return validateId() && validatePersonalId() && validateSimplePw() && validateAddress() && validateEmail()">
 					<!--  <h2>회원가입</h2> -->
 					<div class="form-group">
+						<h2>회원가입</h2>
 						<label for="name">이름:</label> <input type="text" name="name"
 							id="name" placeholder="이름을 입력해주세요." required
 							value="${param.name}">
