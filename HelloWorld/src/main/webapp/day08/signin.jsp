@@ -683,6 +683,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 				</form>
 			</div>
 		</nav>
+		
 
 	</div>
 	<hr class="navbar-divider">

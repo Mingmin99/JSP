@@ -332,6 +332,7 @@ tr:hover {
 <body>
 	<div class="header">
 		<!-- 메뉴바 내용 -->
+		<!-- 메뉴바 내용 -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<c:url var="logoUrl" value="/hanabank.jpg" />
@@ -351,13 +352,7 @@ tr:hover {
 						<li class="nav-item"><a class="nav-link"
 							href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> 마이페이지 </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
-								<li><a class="dropdown-item" href="signin.jsp">회원가입</a></li>
-							</ul></li>
+						<li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
 						<li class="nav-item" style="margin-right: -30px;"><a
 							class="nav-link" href="login.jsp">로그인</a></li>
 						<li class="nav-item"><a class="nav-link" href="signin.jsp">회원가입</a></li>
@@ -371,6 +366,7 @@ tr:hover {
 				</form>
 			</div>
 		</nav>
+		
 
 
 	</div>

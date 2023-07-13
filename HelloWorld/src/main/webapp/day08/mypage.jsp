@@ -268,6 +268,7 @@ h2 {
 <body>
 	<div class="header">
 		<!-- 메뉴바 내용 -->
+		<!-- 메뉴바 내용 -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<c:url var="logoUrl" value="/hanabank.jpg" />
@@ -301,6 +302,7 @@ h2 {
 				</form>
 			</div>
 		</nav>
+		
 
 
 	</div>

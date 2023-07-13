@@ -128,8 +128,9 @@ form {
 }
 
 .logo-container {
-  margin-top: 10px;
+	margin-top: 10px;
 }
+
 .logo-img2 {
 	margin-left: 15px;
 	margin-top: 10px;
@@ -164,6 +165,63 @@ input[type="button"], input[type="submit"] {
 
 input[type="button"]:hover, input[type="submit"]:hover {
 	background-color: #45a049;
+}
+
+.login-form p {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.signup-link, .main-link {
+	display: inline-block;
+	padding: 8px 20px;
+	font-size: 14px;
+	text-decoration: none;
+	color: #8BBCB9;
+	cursor: pointer;
+}
+
+.signup-link::before, .signup-link::after, .main-link::before,
+	.main-link::after {
+	content: "";
+	display: block;
+	height: 2px;
+	background-color: #58817E;
+	position: absolute;
+	transition: width 0.3s;
+}
+
+.signup-link::before, .main-link::before {
+	top: 0;
+	left: 0;
+	width: 0;
+}
+
+.signup-link::after, .main-link::after {
+	bottom: 0;
+	right: 0;
+	width: 0;
+}
+
+.signup-link:hover::before, .signup-link:hover::after, .main-link:hover::before,
+	.main-link:hover::after {
+	width: 100%;
+}
+
+.signup-link:hover::before {
+	transition-delay: 0.3s;
+}
+
+.signup-link:hover::after {
+	transition-delay: 0s;
+}
+
+.main-link:hover::before {
+	transition-delay: 0s;
+}
+
+.main-link:hover::after {
+	transition-delay: 0.3s;
 }
 
 /* 주민등록번호 입력란 스타일 */
@@ -342,36 +400,40 @@ input[type="button"]:hover, input[type="submit"]:hover {
 				다시 돌아온 것을 환영합니다. <br>로그인을 시작하고 더 많은 서비스를 사용하세요!
 			</div>
 		</div>
-	<div class="container-login">
-  <h2>로그인</h2>
-  <div class="row justify-content-center">
-    <div class="login-form">
-      <form action="login" method="post">
-        <div class="form-group">
-          <label for="username">사용자 이름:</label>
-          <input type="text" name="username" id="username" placeholder="사용자 이름을 입력하세요." required>
-        </div>
-        <div class="form-group">
-          <label for="password">비밀번호:</label>
-          <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요." required>
-        </div>
-        <div class="button-container">
-          <input type="submit" value="로그인" class="btn btn-primary">
-        </div>
-      </form>
-      <div class="logo-container text-center">
-        <c:url var="logoUrl" value="/kakao_login_medium_narrow.png" />
-        <a class="navbar-brand" href="mainHana.jsp">
-          <img src="${logoUrl}" alt="로고" class="logo-img2">
-        </a>
-      </div>
-      <p class="mt-3">
-        <a href="#" class="signup-link">회원가입 하러가기</a>
-        <a href="mainHana.jsp" class="btn btn-link">메인화면으로 돌아가기</a>
-      </p>
-    </div>
-  </div>
-</div>
+		<div class="container-login">
+			<h2>로그인</h2>
+			<div class="row justify-content-center">
+				<div class="login-form">
+					<form action="login" method="post">
+						<div class="form-group">
+							<label for="username">사용자 이름:</label> <input type="text"
+								name="username" id="username" placeholder="사용자 이름을 입력하세요."
+								required>
+						</div>
+						<div class="form-group">
+							<label for="password">비밀번호:</label> <input type="password"
+								name="password" id="password" placeholder="비밀번호를 입력하세요."
+								required>
+						</div>
+						<div class="button-container">
+							<input type="submit" value="로그인" class="btn btn-primary">
+						</div>
+					</form>
+					<div class="logo-container text-center">
+						<c:url var="logoUrl" value="/kakao_login_medium_narrow.png" />
+						<a class="navbar-brand" href="mainHana.jsp"> <img
+							src="${logoUrl}" alt="로고" class="logo-img2">
+						</a>
+					</div>
+					<p class="mt-3">
+						<span class="signup-link" onclick="location.href='signin.jsp'">회원가입
+							하러가기</span> <span class="main-link"
+							onclick="location.href='mainHana.jsp'">메인화면으로 돌아가기</span>
+					</p>
+
+				</div>
+			</div>
+		</div>
 
 
 

@@ -601,13 +601,7 @@ margin-left: 100px;
 						<li class="nav-item"><a class="nav-link"
 							href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"> 마이페이지 </a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="login.jsp">로그인</a></li>
-								<li><a class="dropdown-item" href="signin.jsp">회원가입</a></li>
-							</ul></li>
+						<li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
 						<li class="nav-item" style="margin-right: -30px;"><a
 							class="nav-link" href="login.jsp">로그인</a></li>
 						<li class="nav-item"><a class="nav-link" href="signin.jsp">회원가입</a></li>
@@ -621,6 +615,7 @@ margin-left: 100px;
 				</form>
 			</div>
 		</nav>
+
 
 
 	</div>

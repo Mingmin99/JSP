@@ -314,24 +314,33 @@ body {
 </head>
 <body>
 	<div class="header">
-		<!-- 메뉴바 내용 -->
+	<!-- 메뉴바 내용 -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
-				<c:url var="logoUrl" value="/KB.jpg" />
-				<a class="navbar-brand" href="#"> <img src="${logoUrl}" alt="로고"
-					class="logo-img">
+				<c:url var="logoUrl" value="/hanabank.jpg" />
+				<a class="navbar-brand" href="mainHana.jsp"> <img
+					src="${logoUrl}" alt="로고" class="logo-img">
 				</a>
+
 				<div class="collapse navbar-collapse justify-content-center"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-item"><a class="nav-link active"
-							aria-current="page" href="#">계좌조회</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">계좌이체</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">계좌개설</a></li>
+							aria-current="page" href="innerAccount.jsp">계좌조회</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="accountTransferInner.jsp">계좌이체</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="makeAccountSelect.jsp">계좌개설</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="transferInfo.jsp">거래내역조회</a></li>
 						<li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">마이페이지</a></li>
+						<li class="nav-item"><a class="nav-link" href="mypage.jsp">마이페이지</a></li>
+						<li class="nav-item" style="margin-right: -30px;"><a
+							class="nav-link" href="login.jsp">로그인</a></li>
+						<li class="nav-item"><a class="nav-link" href="signin.jsp">회원가입</a></li>
 					</ul>
 				</div>
+
 				<form class="d-flex" role="search">
 					<input class="form-control me-2" type="search" placeholder="Search"
 						aria-label="Search">
@@ -339,6 +348,7 @@ body {
 				</form>
 			</div>
 		</nav>
+
 
 
 	</div>
