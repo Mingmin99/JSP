@@ -64,7 +64,7 @@ body {
 }
 
 .navbar-divider {
-	border-top: 2px solid #009591;
+	border-top: 2px solid #F6D068;
 	margin-top: 0;
 	margin-bottom: 0;
 	width: 100%;

@@ -129,6 +129,7 @@ body {
 
 .btn-group .btn:hover, .btn-group .btn:focus {
 	background-color: #419390;
+	/* 우리은행 색 변경 코드 #0082C9*/
 	color: #ffffff;
 	border-color: #419390;
 }

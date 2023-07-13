@@ -30,7 +30,6 @@ body {
 }
 
 /* 메뉴바 */
-
 .navbar-nav .nav-item {
 	margin-left: 40px;
 }
@@ -65,6 +64,7 @@ body {
 
 .navbar-divider {
 	border-top: 2px solid #009591;
+	/* 우리은행 #BAE3FA*/
 	margin-top: 0;
 	margin-bottom: 0;
 	width: 100%;
@@ -131,8 +131,10 @@ body {
 
 .btn-group .btn:hover, .btn-group .btn:focus {
 	background-color: #419390;
+	/* 우리은행 색 변경 코드 #0082C9*/
 	color: #ffffff;
 	border-color: #419390;
+	/* 우리은행 색 변경 코드 #0082C9*/
 }
 
 h1 {
@@ -164,7 +166,7 @@ h1 {
 .form-group select:focus, .form-group input[type="text"]:focus,
 	.form-group input[type="password"]:focus {
 	outline: none;
-	border-color: #009490;
+	border-color: #0082C9;
 }
 
 .balance-container {
@@ -192,6 +194,7 @@ h1 {
 
 .button-container button {
 	background-color: #009490;
+	/* 우리은행 색 변경 코드 #0082C9*/
 	color: #ffffff;
 	padding: 12px 24px;
 	border: none;
@@ -204,6 +207,7 @@ h1 {
 
 .button-container button:hover {
 	background-color: #00756d;
+	/* 우리은행 색 변경 코드 #0082C9*/
 }
 
 /* 푸터 */
@@ -259,6 +263,7 @@ h1 {
 	height: 20px;
 	text-align: right;
 	color: #009591;
+	/* 우리은행 색 변경 코드 #0082C9*/
 	font-size: 14px;
 	font-family: Noto Sans KR;
 	font-weight: 350;
