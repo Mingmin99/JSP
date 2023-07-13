@@ -77,79 +77,89 @@ body {
 
 .section1 {
 	background-color: #ffffff;
-	height: 1800px;
+	height: 1000px;
 }
 
 .mypage {
-	width: 100%;
+	margin-top: 3%;
+	margin-left: 5%;
+	width: 40%;
 	height: 100px;
 	position: relative;
 	background-color: #8BBCB9;
-	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #ffffff; /* 보더 스타일 및 색상 설정 */
+	border-radius: 50px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    text-align: left;
-    font-size: 25px;
-    color: #4D4D4D;
-    font-family: 'Arial', sans-serif; 
+	position: relative;
+	font-size: 20px;
+	color: #4D4D4D;
+	font-family: 'Arial', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
 }
 
-
 .mypage-container {
-	max-width: 700px;
-	margin: auto;
-	background-color: #FFFFFF;
-	padding: 30px;
-	border-radius: 8px;
-	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-	margin-top: 60px;
+  width: 60%;
+  margin: auto;
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
 }
 
 h2 {
-	color: #333;
-	margin-bottom: 20px;
-	text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .form-group {
-	margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
-	color: #333;
-	font-weight: bold;
-	display: block;
-	margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .form-group p {
-	background-color: #E8E8E8;
-	padding: 10px;
-	border-radius: 5px;
-	color: #555;
+  background-color: #E8E8E8;
+  padding: 10px;
+  border-radius: 5px;
+  color: #555;
 }
 
 .button-container {
-	text-align: center;
-	margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .btn {
-	background-color: #8298A6;
-	color: #FFFFFF;
-	font-size: 15px;
-	font-weight: bold;
-	border-radius: 30px;
-	padding: 12px 80px;
-	cursor: pointer;
-	text-decoration: none;
-	text-transform: uppercase;
-	border: none;
+  background-color: #8298A6;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 12px 40px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
 }
+
+.btn:hover {
+  background-color: #6C8592;
+}
+
 /* 푸터 */
 .BankFooter {
 	background-color: #f7f7f7;

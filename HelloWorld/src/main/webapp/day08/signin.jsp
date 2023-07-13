@@ -75,15 +75,14 @@ body {
 	margin-left: 30px;
 }
 
-/* 제목  */
 .section1 {
 	background-color: #ffffff;
 	height: 1800px;
 }
 
 .signin {
-	margin-top: 4%;
-	margin-left: 3%;
+	margin-top: 3%;
+	margin-left: 5%;
 	width: 40%;
 	height: 100px;
 	position: relative;
@@ -92,7 +91,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	border: 2px solid #ffffff; /* 보더 스타일 및 색상 설정 */
-	border-radius: 8px;
+	border-radius: 50px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -105,15 +104,14 @@ body {
 	letter-spacing: 1.5px;
 }
 
-
 .container {
-	width: 80%;
+	width: 70%;
 	margin: 5 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 80%;
-	margin-top: 60px;
+	margin-top: 100px;
 	margin-bottom: 50px;
 }
 
@@ -122,15 +120,12 @@ body {
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	padding: 30px;
 	border-radius: 10px;
-	max-heigt: 300px;
-	max-width: 800px;
-	width: 100%;
+	width: 70%;
 	max-heigt: 300px;
 }
 
 .form-container h2 {
 	text-align: center;
-	font-size: 24px;
 	margin-bottom: 30px;
 	color: #333333;
 }
@@ -202,7 +197,7 @@ body {
 	color: white; /* Text color */
 	transition: border-color 0.3s ease;
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 15px;
 }
 
 .form-group-duplicate input[type="text"]:focus, .form-group-duplicate .input-group-btn:focus
@@ -655,7 +650,6 @@ input[type="button"]:hover, input[type="submit"]:hover {
 <body>
 	<div class="header">
 		<!-- 메뉴바 내용 -->
-		<!-- 메뉴바 내용 -->
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<c:url var="logoUrl" value="/hanabank.jpg" />
@@ -691,7 +685,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
 		</nav>
 
 	</div>
-
+	<hr class="navbar-divider">
 
 
 

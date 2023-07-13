@@ -79,8 +79,8 @@ body {
 }
 
 .login {
-	margin-top: 4%;
-	margin-left: 3%;
+	margin-top: 3%;
+	margin-left: 5%;
 	width: 40%;
 	height: 100px;
 	position: relative;
@@ -89,7 +89,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	border: 2px solid #ffffff; /* 보더 스타일 및 색상 설정 */
-	border-radius: 8px;
+	border-radius: 50px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -102,14 +102,18 @@ body {
 	letter-spacing: 1.5px;
 }
 
-.container {
+.container-login {
 	background-color: #f8f8f8;
-	width: 50%;
-	padding: 20px;
-	margin-top: 60px;
-	padding-top: 50px;
+	width: 70%;
 	margin-bottom: 30px;
-	padding-top: 50px;
+	position: absolute;
+	top: 70%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 30px;
+	border-radius: 10px;
 }
 
 h2 {
@@ -118,54 +122,70 @@ h2 {
 	align-items: center;
 }
 
-.form-label {
-	font-weight: bold;
+form {
+	max-width: 400px;
+	margin: 0 auto;
 }
 
-.form-control {
-	padding: 20px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	box-sizing: border-box;
-	background-color: #FEFAFA;
+.logo-container {
+  margin-top: 10px;
 }
-
-.btn-primary {
-	margin-top: 10px;
-	width: 180px;
-	height: 45px;
-	background-color: #009591 !important;
-	color: #fff;
-	border: none;
-	padding: 20px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-	margin-left: 120px;
-	margin-right: 30px;
-	background-color: #009591 !important;
-}
-
-.btn-primary:hover {
-	background-color: #006f6c !important;
-}
-
-.signup-link {
-	margin-top: 10px;
-	margin-right: 10px;
-}
-
-.btn-link {
-	color: #007bff;
-	margin-right: 10px;
-}
-
 .logo-img2 {
+	margin-left: 15px;
 	margin-top: 10px;
 	transform: scale(1.1);
+	margin: 0 auto;
 }
 
-.mt-3 {
-	margin-left: 180px;
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	font-size: 14px;
+}
+
+input[type="button"], input[type="submit"] {
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #8BBCB9;
+	color: black;
+	font-size: 14px;
+	border: none;
+	cursor: pointer;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+/* 주민등록번호 입력란 스타일 */
+.personal-id-input {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.personal-id-input input[type="text"] {
+	flex: 1;
+	padding: 10px;
+	margin-right: 5px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	text-align: center;
+}
+
+.personal-id-input span {
+	font-size: 18px;
+	margin-right: 5px;
 }
 
 /* 푸터 */
@@ -322,34 +342,40 @@ h2 {
 				다시 돌아온 것을 환영합니다. <br>로그인을 시작하고 더 많은 서비스를 사용하세요!
 			</div>
 		</div>
+	<div class="container-login">
+  <h2>로그인</h2>
+  <div class="row justify-content-center">
+    <div class="login-form">
+      <form action="login" method="post">
+        <div class="form-group">
+          <label for="username">사용자 이름:</label>
+          <input type="text" name="username" id="username" placeholder="사용자 이름을 입력하세요." required>
+        </div>
+        <div class="form-group">
+          <label for="password">비밀번호:</label>
+          <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요." required>
+        </div>
+        <div class="button-container">
+          <input type="submit" value="로그인" class="btn btn-primary">
+        </div>
+      </form>
+      <div class="logo-container text-center">
+        <c:url var="logoUrl" value="/kakao_login_medium_narrow.png" />
+        <a class="navbar-brand" href="mainHana.jsp">
+          <img src="${logoUrl}" alt="로고" class="logo-img2">
+        </a>
+      </div>
+      <p class="mt-3">
+        <a href="#" class="signup-link">회원가입 하러가기</a>
+        <a href="mainHana.jsp" class="btn btn-link">메인화면으로 돌아가기</a>
+      </p>
+    </div>
+  </div>
+</div>
 
-		<div class="container">
-			<h2>로그인</h2>
-			<div class="row justify-content-center">
-				<div class="col-md-6">
-					<form>
-						<div class="mb-3">
-							<label for="username" class="form-label">아이디</label> <input
-								type="text" class="form-control" id="username">
-						</div>
-						<div class="mb-3">
-							<label for="password" class="form-label">비밀번호</label> <input
-								type="password" class="form-control" id="password">
-						</div>
-						<button type="submit" class="btn btn-primary">로그인</button>
 
-						<c:url var="logoUrl" value="/kakao_login_medium_narrow.png" />
-						<a class="navbar-brand" href="mainHana.jsp"> <img
-							src="${logoUrl}" alt="로고" class="logo-img2">
-						</a>
-						<p class="mt-3">
-							<a href="#" class="signup-link">회원가입 하러가기</a> <a
-								href="mainHana.jsp" class="btn btn-link">메인화면으로 돌아가기</a>
-						</p>
-					</form>
-				</div>
-			</div>
-		</div>
+
+
 	</div>
 
 
