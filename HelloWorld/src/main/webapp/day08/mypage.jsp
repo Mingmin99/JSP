@@ -105,59 +105,59 @@ body {
 }
 
 .mypage-container {
-  width: 60%;
-  margin: auto;
-  background-color: #FFFFFF;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  margin-top: 60px;
+	width: 60%;
+	margin: auto;
+	background-color: #FFFFFF;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+	margin-top: 60px;
 }
 
 h2 {
-  color: #333;
-  margin-bottom: 20px;
-  text-align: center;
+	color: #333;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 .form-group {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .form-group label {
-  color: #333;
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
+	color: #333;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
 }
 
 .form-group p {
-  background-color: #E8E8E8;
-  padding: 10px;
-  border-radius: 5px;
-  color: #555;
+	background-color: #E8E8E8;
+	padding: 10px;
+	border-radius: 5px;
+	color: #555;
 }
 
 .button-container {
-  text-align: center;
-  margin-top: 30px;
+	text-align: center;
+	margin-top: 30px;
 }
 
 .btn {
-  background-color: #8298A6;
-  color: #FFFFFF;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 30px;
-  padding: 12px 40px;
-  cursor: pointer;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: none;
+	background-color: #8298A6;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 30px;
+	padding: 12px 40px;
+	cursor: pointer;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: none;
 }
 
 .btn:hover {
-  background-color: #6C8592;
+	background-color: #6C8592;
 }
 
 /* 푸터 */
@@ -302,7 +302,7 @@ h2 {
 				</form>
 			</div>
 		</nav>
-		
+
 
 
 	</div>
@@ -313,7 +313,9 @@ h2 {
 
 		<div class="mypage">
 
-			<div class="title">안녕하세요! <br> 마이페이지에서 당신의 정보를 확인해보세요!</div>
+			<div class="title">
+				안녕하세요! <br> 마이페이지에서 당신의 정보를 확인해보세요!
+			</div>
 
 		</div>
 
@@ -322,34 +324,34 @@ h2 {
 			<h2>나의 정보</h2>
 			<div class="form-group">
 				<label for="name">이름:</label>
-				<p id="name">홍길동</p>
+				<p id="name">최민영</p>
 			</div>
 
 			<div class="form-group">
 				<label for="id">아이디:</label>
-				<p id="id">gildong123</p>
+				<p id="id">min</p>
 			</div>
 
 			<div class="form-group">
 				<label for="personal_id">주민등록번호:</label>
-				<p id="personal_id">123456-******</p>
+				<p id="personal_id">991024-2******</p>
 			</div>
 
 			<div class="form-group">
 				<label for="phone">전화번호:</label>
-				<p id="phone">010-1234-5678</p>
+				<p id="phone">01071814426</p>
 			</div>
 
 			<div class="form-group">
 				<label for="address">주소:</label>
-				<p id="sample6_postcode">12345</p>
-				<p id="sample6_address">서울특별시 종로구 청운효자동</p>
-				<p id="sample6_detailAddress">1-2, 청운빌딩 3층</p>
+				<p id="sample6_postcode">14246</p>
+				<p id="sample6_address">경기 광명시 하안로 364</p>
+				<p id="sample6_detailAddress">하안동</p>
 			</div>
 
 			<div class="form-group">
 				<label for="email">이메일:</label>
-				<p id="email">gildong123@email.com</p>
+				<p id="email">alsdud11737@naver.com</p>
 			</div>
 
 			<div class="button-container">
