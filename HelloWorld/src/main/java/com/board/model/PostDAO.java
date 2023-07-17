@@ -263,15 +263,12 @@ public class PostDAO {
 			conn = DriverManager.getConnection(url, uid, upw);
 			String query = "DELETE FROM MVC_BOARD WHERE ID = ?";
 			pstmt = conn.prepareStatement(query);
-			
-			for(String id : ids) {
+
+			for (String id : ids) {
 				int convertedId = Integer.parseInt(id);
 				pstmt.setInt(1, convertedId);
 				iResult = pstmt.executeUpdate();
 			}
-			
-			
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -323,64 +320,64 @@ public class PostDAO {
 	}
 
 	public void replyPost(int originalPostId, PostDTO replydto) {
-	    Connection conn = null;
-	    PreparedStatement pstmt = null;
-	    ResultSet rs = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 
-	    try {
-	        Class.forName(driver);
-	        conn = DriverManager.getConnection(url, uid, upw);
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url, uid, upw);
 
-	        // 원글 조회
-	        String originalPostQuery = "SELECT CATEGORY, LEVEL_NUM FROM MVC_BOARD WHERE ID = ?";
-	        pstmt = conn.prepareStatement(originalPostQuery);
-	        pstmt.setInt(1, originalPostId);
-	        rs = pstmt.executeQuery();
+			// 원글 조회
+			String originalPostQuery = "SELECT CATEGORY, LEVEL_NUM FROM MVC_BOARD WHERE ID = ?";
+			pstmt = conn.prepareStatement(originalPostQuery);
+			pstmt.setInt(1, originalPostId);
+			rs = pstmt.executeQuery();
 
-	        if (rs.next()) {
-	            int originalCategory = rs.getInt("CATEGORY");
-	            int originalLevel = rs.getInt("LEVEL_NUM");
+			if (rs.next()) {
+				int originalCategory = rs.getInt("CATEGORY");
+				int originalLevel = rs.getInt("LEVEL_NUM");
 
-	            // 답글 작성
-	            String replyQuery = "INSERT INTO MVC_BOARD (WRITER, TITLE, CONTENT, CATEGORY, LEVEL_NUM) VALUES (?, ?, ?, ?, ?)";
-	            pstmt = conn.prepareStatement(replyQuery);
-	            pstmt.setString(1, replydto.getWriter());
+				// 답글 작성
+				String replyQuery = "INSERT INTO MVC_BOARD (WRITER, TITLE, CONTENT, CATEGORY, LEVEL_NUM) VALUES (?, ?, ?, ?, ?)";
+				pstmt = conn.prepareStatement(replyQuery);
+				pstmt.setString(1, replydto.getWriter());
 
-	            // 제목에 레벨만큼 "-" 기호 추가
-	            String replyTitle = "-".repeat(originalLevel) + " " + replydto.getTitle();
-	            pstmt.setString(2, replyTitle);
+				// 제목에 레벨만큼 "-" 기호 추가
+				String replyTitle = "-".repeat(originalLevel) + " " + replydto.getTitle();
+				pstmt.setString(2, replyTitle);
 
-	            pstmt.setString(3, replydto.getContent());
-	            pstmt.setInt(4, originalCategory);
-	            pstmt.setInt(5, originalLevel + 1);
+				pstmt.setString(3, replydto.getContent());
+				pstmt.setInt(4, originalCategory);
+				pstmt.setInt(5, originalLevel + 1);
 
-	            int iResult = pstmt.executeUpdate();
+				int iResult = pstmt.executeUpdate();
 
-	            if (iResult > 0) {
-	                System.out.println("답글이 성공적으로 생성되었습니다.");
-	            } else {
-	                System.out.println("답글 생성에 실패하였습니다.");
-	            }
-	        } else {
-	            System.out.println("원글을 찾을 수 없습니다.");
-	        }
-	    } catch (ClassNotFoundException | SQLException e) {
-	        e.printStackTrace();
-	    } finally {
-	        try {
-	            if (rs != null) {
-	                rs.close();
-	            }
-	            if (pstmt != null) {
-	                pstmt.close();
-	            }
-	            if (conn != null) {
-	                conn.close();
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-	    }
+				if (iResult > 0) {
+					System.out.println("답글이 성공적으로 생성되었습니다.");
+				} else {
+					System.out.println("답글 생성에 실패하였습니다.");
+				}
+			} else {
+				System.out.println("원글을 찾을 수 없습니다.");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

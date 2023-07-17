@@ -808,11 +808,11 @@ margin-left: 100px;
 						src="${logoUrl_KB}" alt="로고" class="logoUrl_KB">
 					</a>
 					<c:url var="logoUrl_IBK" value="/IBK.jpg" />
-					<a class="logoUrl_IBK" href="#"> <img src="${logoUrl_IBK}"
+					<a class="logoUrl_IBK" href="mainIBK.jsp"> <img src="${logoUrl_IBK}"
 						alt="로고" class="logoUrl_IBK">
 					</a>
 					<c:url var="logoUrl_NH" value="/NH.jpg" />
-					<a class="logoUrl_NH" href="#"> <img src="${logoUrl_NH}"
+					<a class="logoUrl_NH" href="mainNH.jsp"> <img src="${logoUrl_NH}"
 						alt="로고" class="logoUrl_NH">
 					</a>
 				</div>

@@ -31,8 +31,9 @@ body {
 	text-align: center;
 }
 
+/* 메뉴바 */
 .navbar-nav .nav-item {
-	margin-left: 50px;
+	margin-left: 2rem;
 }
 
 .navbar-nav .nav-link {
@@ -40,34 +41,38 @@ body {
 }
 
 .navbar {
-	padding-top: 10px; /* 헤더 상단 여백 조절 */
-	padding-bottom: 10px; /* 헤더 하단 여백 조절 */
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
 .navbar-brand {
-	margin-left: 50px; /* 로고 이미지와 메뉴 간격 조절 */
+	margin-bottom: 1rem;
 }
 
 .navbar-nav {
-	margin-left: -50px; /* 메뉴 간격 조절 */
+	margin-left: -1.5rem;
 }
 
 .logo-img {
-	margin-left: 80px;
+	margin-left: 5rem;
 	max-width: 100px;
 	max-height: 100px;
 }
 
 .navbar {
-	padding-top: 3px; /* 헤더 상단 여백 조절 */
-	padding-bottom: 3px; /* 헤더 하단 여백 조절 */
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
 }
 
 .navbar-divider {
-	border-top: 2px solid #F6D068;
+	border-top: 2px solid #009591;
 	margin-top: 0;
 	margin-bottom: 0;
 	width: 100%;
+}
+
+.navbar-nav .nav-item:nth-child(6) {
+	margin-left: 1.5rem;
 }
 
 .section1 {
@@ -130,11 +135,12 @@ body {
 
 .section2 {
 	background-color: #ECF0F1;
-	height: 150px;
+	height: 160px;
 }
 
 .section-middle-wrap {
 	display: flex;
+	margin-top: -10px;
 	justify-content: center;
 	align-items: center;
 	background: #ECF0F1;
@@ -305,9 +311,148 @@ body {
 	word-wrap: break-word;
 	cursor: pointer;
 }
+
+.DivSectionAppconWrapBankLogo {
+	width: 100%;
+	height: 158px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: white;
+}
+
+.DivSectionAppconInnerBankLogo {
+	width: 1150px;
+	height: 158px;
+	position: relative;
+}
+
+.ListBankLogo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+	gap: 100px;
+}
+
+.logoUrl_hana, .logoUrl_woori, .logoUrl_KB, .logoUrl_IBK, .logoUrl_NH {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.logoUrl_hana img, .logoUrl_woori img, .logoUrl_KB img, .logoUrl_IBK img,
+	.logoUrl_NH img {
+	width: auto;
+	height: 100%;
+	object-fit: contain;
+}
+
+/* 푸터 */
+.BankFooter {
+	background-color: #f7f7f7;
+	padding: 20px;
+	text-align: center;
+}
+
+.BankFooterContent {
+	max-width: 800px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-left: -50px;
+}
+
+.FooterLinks {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+.FooterLinks li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.FooterLinks li:last-child {
+	margin-right: 0;
+}
+
+.FooterLinks a {
+	color: #333;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.FooterDescription {
+	color: #666;
+	font-size: 12px;
+}
+
+.ContactItem {
+	width: 250px;
+	height: 40px;
+	position: absolute;
+	margin-right: 150px;
+	right: 0;
+}
+
+.ContactTitle {
+	width: 50px;
+	height: 20px;
+	text-align: right;
+	color: #009591;
+	font-size: 14px;
+	font-family: Noto Sans KR;
+	font-weight: 350;
+	line-height: 10px; /* Increase line-height to add spacing */
+	word-wrap: break-word;
+	position: absolute;
+	top: 2px;
+	right: 30px;
+}
+
+.ContactNumber {
+	width: 122.17px;
+	height: 36px;
+	text-align: right;
+	color: #333333;
+	font-size: 24px;
+	font-family: Noto Sans KR;
+	font-weight: 350;
+	line-height: 24px;
+	word-wrap: break-word;
+	position: absolute;
+	top: 19px;
+}
+
+.ContactNumber.Strong15881111 {
+	left: 0;
+	right: 30px;
+}
+
+.ContactSeparator {
+	width: 9.12px;
+	height: 36px;
+	text-align: right;
+	color: #DDDDDD;
+	font-size: 24px;
+	font-family: Noto Sans KR;
+	font-weight: 350;
+	line-height: 24px;
+	word-wrap: break-word;
+	position: absolute;
+	top: 19px;
+	left: 124.68px;
+}
+
+.ContactNumber.Strong15991111 {
+	left: 105px;
+}
+}
 </style>
-
-
 <!-- 부트스트랩 연결 -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
@@ -438,10 +583,26 @@ body {
 		<p>섹션 4의 내용입니다.</p>
 	</div>
 
-	<div class="footer">
-		<!-- 푸터 내용 -->
-		<p>푸터 내용입니다.</p>
-	</div>
+	<footer class="BankFooter">
+		<div class="BankFooterContent">
+			<ul class="FooterLinks">
+				<li><a href="#">이용약관</a></li>
+				<li><a href="#">개인정보처리방침</a></li>
+				<li><a href="#">보안정책</a></li>
+				<li><a href="#">고객센터</a></li>
+			</ul>
+			<div class="ContactItem">
+				<div class="ContactTitle">고객센터</div>
+				<div class="ContactNumber Strong15881111">1588-1111</div>
+				<div class="ContactSeparator">/</div>
+				<div class="ContactNumber Strong15991111">1599-1111</div>
+			</div>
+
+			<p class="FooterDescription">하나은행오픈뱅킹입니다.</p>
+		</div>
+
+	</footer>
+
 	<!-- 부트스트랩 JavaScript 연결 -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
